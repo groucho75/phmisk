@@ -10,17 +10,22 @@ It comes with:
 
 Then, Phmisk uses Composer so you can include and use all the libraries you need.
 
----
+***
 
 Installation
 ------------
 
 TODO
 
+
+***
+
 Routes
 ------
 
 TODO
+
+***
 
 Templates
 ---------
