@@ -33,9 +33,15 @@ Installation
 
 Routes
 ------
-
-TODO
-
+Add a simple route in `index.php`:
+```php
+$router->get('/hello', function() {
+	
+	echo 'Hello world!';
+	
+});
+```
+For usage and more examples please see the [router homepage](https://github.com/bramus/router).
 
 ***
 Templates
