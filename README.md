@@ -48,7 +48,7 @@ For usage and more examples please see the [router homepage](https://github.com/
 ***
 Templates
 ---------
-To use the template engine in a route add `use ($tpl)` to the function. A route in `index.php` engine could be:
+To use the template engine in a route add `use ($tpl)` to the function. A route in `index.php` could be:
 ```php
 $router->get('/hello/(\w+)', function($name) use ( $tpl ) {
 	
