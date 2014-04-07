@@ -146,13 +146,6 @@ TODO
 
 
 ***
-Custom controllers in routes
-----------------------------
-
-TODO (oppure no? e usarli nel form PFBC)
-
-
-***
 Quick tutorial: create a form with PFBC
 ---------------------------------------
 
