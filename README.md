@@ -33,7 +33,7 @@ Installation
 
 Routes
 ------
-Add a simple route in `index.php`:
+Add the simplest route in `index.php`:
 ```php
 $router->get('/hello', function() {
 	
@@ -41,6 +41,7 @@ $router->get('/hello', function() {
 	
 });
 ```
+You can visit `your-site.com/hello` to see it.
 For usage and more examples please see the [router homepage](https://github.com/bramus/router).
 
 ***
