@@ -48,7 +48,7 @@ And you can visit `your-site.com/hello` to see it.
 
 ### Custom controller files
 
-You can map custom controller/method as a route: put your controllers inside `app\Controllers` and they will be autoloded. Here is a route provided by custom controller called `Demo`:
+You can map custom controller/method as a route: put your controllers inside `app\controllers` and they will be autoloded. Here is a route provided by custom controller called `Demo`:
 ```php
 $demo = new App\Controllers\Demo();
 
@@ -58,7 +58,7 @@ $router->get('/test', function() use ( $demo, $tpl ) {
 });
 ```
 
-The `Demo` controller file is located in `app\Controllers\Demo.php` and contains:
+The `Demo` controller file is located in `app\controllers\Demo.php` and contains:
 ```php
 namespace App\Controllers;
 
@@ -68,7 +68,7 @@ class Demo extends Base
 	{
 		$data = array(
 			'msg' 		=> 'Demo->test()',
-			'text'		=> 'This page has been created by Test method of Demo custom controller, located in: app/controllers/Demo.php'
+			'text'		=> 'This page has been created by Test method of Demo custom controller'
 		);
 				
 		$tpl->assign( $data );
