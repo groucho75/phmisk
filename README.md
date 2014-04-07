@@ -41,9 +41,18 @@ $router->get('/hello', function() {
 	
 });
 ```
-You can visit `your-site.com/hello` to see it.
+And you can visit `your-site.com/hello` to see it.
 
-For usage and more examples please see the [router homepage](https://github.com/bramus/router).
+You can map custom controller/method as a route: put your controllers inside `app\Controllers` and they will be autoloded. Here is a route provided by `Demo` custom controller located in `app\Controllers\Demo.php`:
+```php
+$demo = new App\Controllers\Demo();
+
+$router->get('/test', function() use ( $demo, $tpl ) {
+	
+	$demo->test($tpl);
+});
+```
+For usage and more examples please see the [router homepage: bramus/router](https://github.com/bramus/router.)
 
 ***
 Templates
@@ -74,7 +83,7 @@ The template file, `ui/hello.php`, could be:
 ```
 You can visit `your-site.com/hello/johnny` to see it.
 
-For usage and more examples please see the [template engine homepage](http://www.raintpl.com).
+For usage and more examples please see the [template engine homepage: rain.TPL](http://www.raintpl.com).
 
 ***
 ORM database layer
@@ -91,8 +100,8 @@ TODO
 
 
 ***
-Edit config & bootstrap
------------------------
+Config, bootstrap, helpers
+--------------------------
 
 TODO
 
