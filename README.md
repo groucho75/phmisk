@@ -111,6 +111,10 @@ The template file, `ui/hello.php`, could be:
 ```
 You can visit `your-site.com/hello/johnny` to see it.
 
+Note that template files are php files, so you can freely use php statements.
+
+### Reference
+
 For usage and more examples please see the [template engine homepage: rain.TPL](http://www.raintpl.com).
 
 ***
