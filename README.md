@@ -15,8 +15,17 @@ Then, Phmisk uses Composer so you can include and use all the libraries you need
 Installation
 ------------
 
-TODO
-
+1. download and install [Composer](https://getcomposer.org/doc/00-intro.md#installation-nix) on your machine
+2. clone/download this repository
+3. go to phmisk directory and launch Composer install to resolve and download required packages:
+⋅⋅1. if Composer local installation:
+```
+$ php composer.phar install
+```
+⋅⋅2. if Composer global installation:
+```
+$ composer install
+```
 
 ***
 
