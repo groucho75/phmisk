@@ -47,9 +47,26 @@ For usage and more examples please see the [router homepage](https://github.com/
 ***
 Templates
 ---------
+A route in `index.php` could be:
+```php
+$router->get('/hello/(\w+)', function($name) use ( $tpl ) {
+	
+	$tpl->assign( 'name', $name );
+	$tpl->draw( 'hello' );
+});
+```
+The template file, `ui/hello`, could be:
+```html
+{include="header"}
+	<div class="container">
+		<div class="page-header">
+			<h1>Hi {$name}</h1>
+		</div>
+		<p class="lead">You are welcome!</p>
+	</div>
 
-TODO
-
+{include="footer"}
+```
 
 ***
 ORM database layer
