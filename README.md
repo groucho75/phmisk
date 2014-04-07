@@ -18,11 +18,11 @@ Installation
 1. download and install [Composer](https://getcomposer.org/doc/00-intro.md#installation-nix) on your machine
 2. clone/download this repository
 3. go to phmisk directory and launch Composer install to resolve and download required packages: 
-  * if Composer local installation:
+   if Composer local installation:
 ```
 $ php composer.phar install
 ```
-  * if Composer global installation:
+   if Composer global installation:
 
 ```
 $ composer install
