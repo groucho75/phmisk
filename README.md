@@ -3,10 +3,11 @@ phmisk
 
 Phmisk is a Php/Html MIcro Starter Kit.
 It comes with:
-an html5 UI, with css and jquery (html5boilerplate + bootstrap);
-a router (...);
-a template engine (...);
-an ORM database layer (...).
+* an html5 UI, with css and jquery (html5boilerplate + bootstrap)
+* a router (...)
+* a template engine (...)
+* an ORM database layer (...)
+
 Then, Phmisk uses Composer so you can include and use all the libraries you need.
 
 Installation
