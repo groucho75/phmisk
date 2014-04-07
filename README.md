@@ -53,20 +53,26 @@ $router->get('/hello/(\w+)', function($name) use ( $tpl ) {
 	
 	$tpl->assign( 'name', $name );
 	$tpl->draw( 'hello' );
+	
 });
 ```
 The template file, `ui/hello`, could be:
 ```html
 {include="header"}
+
 	<div class="container">
 		<div class="page-header">
+		
 			<h1>Hi {$name}</h1>
+			
 		</div>
 		<p class="lead">You are welcome!</p>
 	</div>
 
 {include="footer"}
 ```
+You can visit `your-site.com/hello/johnny` to see it.
+For usage and more examples please see the [template engine homepage](http://www.raintpl.com).
 
 ***
 ORM database layer
