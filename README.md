@@ -25,38 +25,50 @@ Routes
 
 TODO
 
-***
 
+***
 Templates
 ---------
 
 TODO
 
+
+***
 ORM database layer
 ------------------
 
 TODO
 
+
+***
 The app file structure
 ----------------------
 
 TODO
 
+
+***
 Edit config & bootstrap
 -----------------------
 
 TODO
 
+
+***
 Include more packages
 ---------------------
 
 TODO
 
+
+***
 Custom controllers in routes
 ----------------------------
 
 TODO (oppure no? e usarli nel form PFBC)
 
+
+***
 Quick tutorial: create a form with PFBC
 ---------------------------------------
 
