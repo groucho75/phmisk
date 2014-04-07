@@ -33,6 +33,9 @@ Installation
 
 Routes
 ------
+
+### Routing
+
 Add the simplest route in `index.php`:
 ```php
 $router->get('/hello', function() {
@@ -43,7 +46,9 @@ $router->get('/hello', function() {
 ```
 And you can visit `your-site.com/hello` to see it.
 
-You can map custom controller/method as a route: put your controllers inside `app\Controllers` and they will be autoloded. Here is a route provided by `Demo` custom controller located in `app\Controllers\Demo.php`:
+### Custom controller files
+
+You can map custom controller/method as a route: put your controllers inside `app\Controllers` and they will be autoloded. Here is a route provided by custom controller called `Demo`:
 ```php
 $demo = new App\Controllers\Demo();
 
@@ -52,6 +57,29 @@ $router->get('/test', function() use ( $demo, $tpl ) {
 	$demo->test($tpl);
 });
 ```
+
+The `Demo` controller file is located in `app\Controllers\Demo.php` and contains:
+```php
+namespace App\Controllers;
+
+class Demo extends Base
+{	
+	function test($tpl) 
+	{
+		$data = array(
+			'msg' 		=> 'Demo->test()',
+			'text'		=> 'This page has been created by Test method of Demo custom controller, located in: app/controllers/Demo.php'
+		);
+				
+		$tpl->assign( $data );
+		$tpl->draw( 'message' );			
+	}
+
+}
+```
+
+### Reference
+
 For usage and more examples please see the [router homepage: bramus/router](https://github.com/bramus/router.)
 
 ***
