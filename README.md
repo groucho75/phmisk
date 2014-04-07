@@ -42,6 +42,7 @@ $router->get('/hello', function() {
 });
 ```
 You can visit `your-site.com/hello` to see it.
+
 For usage and more examples please see the [router homepage](https://github.com/bramus/router).
 
 ***
@@ -56,7 +57,7 @@ $router->get('/hello/(\w+)', function($name) use ( $tpl ) {
 	
 });
 ```
-The template file, `ui/hello`, could be:
+The template file, `ui/hello.php`, could be:
 ```html
 {include="header"}
 
@@ -72,6 +73,7 @@ The template file, `ui/hello`, could be:
 {include="footer"}
 ```
 You can visit `your-site.com/hello/johnny` to see it.
+
 For usage and more examples please see the [template engine homepage](http://www.raintpl.com).
 
 ***
