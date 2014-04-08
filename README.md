@@ -8,7 +8,7 @@ Phmisk is ready to work with:
 * a template engine: [rain.TPL](http://www.raintpl.com/)
 * an ORM database layer: [VoodOrm](https://github.com/mardix/VoodOrm)
 
-Phmisk comes out *without these libraries* (router, template, ORM), so you have to use Composer to install them.
+Phmisk comes out *without these libraries*, so you have to use Composer to install them.
 Of course, using Composer you can include and use all libraries you need.
 
 ***
