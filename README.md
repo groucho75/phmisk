@@ -135,8 +135,34 @@ $router->get('/blog', function() use ( $db, $tpl ) {
 	$tpl->draw( 'blog' );    
 });
 ```
-Note that you have to add `use ( $db )` to function in order to pass the ORM instance.
-The database connection parameters are set in `app/config.php`
+Note that you have to add `use ( $db )` to the function in order to pass the ORM instance.
+The database connection parameters are set in `app/config.php` and the connection starts in `app/bootstrap.php`.
+
+Just for your thirst for knowledge, here is the blog template file, `ui/blog.php`:
+```html
+{include="header"}
+
+	<div class="container">
+	
+		<div class="page-header">
+			<h1>{$msg}</h1>
+		</div>
+		
+		<ul class="lead">
+			{loop="$posts"}
+				<li>{$value.title}</li>
+			{else}
+				<li>No post yet.</li>
+			{/loop}
+		</ul>
+	</div>
+
+{include="footer"}
+```
+
+### Reference
+
+For usage and more examples please see the [ORM homepage: VoodOrm](https://github.com/mardix/VoodOrm).
 
 
 ***
