@@ -9,7 +9,7 @@ Phmisk is ready to work with:
 * an ORM database layer: [VoodOrm](https://github.com/mardix/VoodOrm)
 
 Phmisk comes out *without these libraries*, so you have to use Composer to install them.
-Of course, using Composer you can include and use all libraries you need.
+Of course, using Composer you can include and use also other libraries.
 
 ***
 
