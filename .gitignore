@@ -1,0 +1,11 @@
+# Cache
+app/cache
+app/cache/!index.html
+
+# Composer
+vendor
+composer.lock
+
+# Aptana IDE
+.project
+.settings

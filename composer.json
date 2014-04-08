@@ -1,0 +1,31 @@
+{
+    "name": "groucho75/miphskit",
+    "description": "Php Html5 Micro Starter Kit",
+    "type": "library",
+    "keywords": ["php", "microframework"],
+    "homepage": "https://github.com/groucho75/phmisk",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alessandro Massasso",
+            "email": "alo@eventualo.net",
+            "homepage": "http://www.eventualo.net",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/groucho75/phmisk/issues",
+        "wiki": "https://github.com/groucho75/phmisk/wiki",
+        "source": "https://github.com/groucho75/phmisk"
+    },
+	"require": {
+		"php": ">=5.3.3",
+		"bramus/router": "dev-master",
+		"rain/raintpl":">=3.0.0",
+		"voodoophp/voodorm": "2.*"
+	},
+    "autoload": {	
+        "classmap": ["app/controllers/"],
+        "files": ["app/helpers.php"]
+    }	
+}
