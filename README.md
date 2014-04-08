@@ -75,6 +75,7 @@ class Demo extends Base
 
 }
 ```
+The `Base` controller is a parent class you can extend to have shared methods.
 
 ### Reference
 
