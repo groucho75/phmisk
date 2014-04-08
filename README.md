@@ -115,7 +115,28 @@ For usage and more examples please see the [template engine homepage: rain.TPL](
 ORM database layer
 ------------------
 
-TODO
+Phmisk uses an ORM library built on top of [PDO](http://www.php.net/manual/en/book.pdo.php).
+
+In this `blog` route you get some posts and prepare them to be sent to layout: 
+```php
+$router->get('/blog', function() use ( $db, $tpl ) {
+
+	$results = $db->table('posts')->limit(5)->find();
+
+	$posts = array();
+	if ( $results ) foreach ($results as $item) $posts[] = array('title' => $item->title );
+	
+	$data = array(
+		'msg' 		=> 'My posts',
+		'posts'		=> $posts,
+	);
+	
+	$tpl->assign( $data );	
+	$tpl->draw( 'blog' );    
+});
+```
+Note that you have to add `use ( $db )` to function in order to pass the ORM instance.
+The database connection parameters are set in `app/config.php`
 
 
 ***
