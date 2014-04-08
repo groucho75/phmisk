@@ -52,27 +52,21 @@ You can map custom controller/method as a route: put your controllers inside `ap
 ```php
 $demo = new App\Controllers\Demo();
 
-$router->get('/test', function() use ( $demo, $tpl ) {
+$router->get('/test', function() use ( $demo ) {
 	
 	$demo->test($tpl);
 });
 ```
 
-The `Demo` controller file is located in `app\controllers\Demo.php` and contains:
+The `Demo` controller file is located in `app\controllers\Demo.php` and contains something like:
 ```php
 namespace App\Controllers;
 
 class Demo extends Base
 {	
-	function test($tpl) 
+	function test() 
 	{
-		$data = array(
-			'msg' 		=> 'Demo->test()',
-			'text'		=> 'This page has been created by Test method of Demo custom controller'
-		);
-				
-		$tpl->assign( $data );
-		$tpl->draw( 'message' );			
+		echo 'This page has been created by Test method of Demo custom controller';			
 	}
 
 }
