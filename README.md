@@ -210,14 +210,20 @@ The `app` folder contains some important files:
 * `bootstrap.php`: the main classes (router, template, database and ORM) are initialised here;
 * `helpers.php`: this file contains some useful functions you can use everywhere.
 
-If you like to use other packages instead of standard (e.g. another template engine), you have to set them in `require` section inside `composer.json`, then change the initialisation in `bootstrap.php`.
-
 
 ***
 Include more packages
 ---------------------
 
-TODO
+To include more packages you can simply add them in `require` section inside `composer.json` and then launch Composer update:
+```
+	"require": {
+		...
+		"monolog/monolog": "1.0.*"
+	},
+```
+
+If you like to use other packages instead of standard (e.g. another template engine), you have to set them in `require` section inside `composer.json`, then change the initialisation in `bootstrap.php`.
 
 
 ***
