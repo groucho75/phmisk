@@ -2,7 +2,7 @@ phmisk
 ======
 
 Phmisk is a Php/Html5 MIcro Starter Kit.
-It comes with an **html5 UI**, with css and jquery: html5boilerplate + bootstrap, from [Initializr](http://www.initializr.com).
+It comes with an **html5 UI**: Html5boilerplate and Twittter Bootstrap, from [Initializr](http://www.initializr.com).
 Phmisk is ready to work with:
 * a router: [bramus/router](https://github.com/bramus/router)
 * a template engine: [rain.TPL](http://www.raintpl.com/)
