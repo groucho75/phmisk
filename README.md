@@ -28,7 +28,7 @@ Installation
    ```  
    $ composer install  
    ```  
-4. set
+4. set the permission of `app/cache` folder to 777
 
 ***
 
