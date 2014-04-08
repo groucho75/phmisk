@@ -28,6 +28,7 @@ Installation
    ```  
    $ composer install  
    ```  
+4. set
 
 ***
 
