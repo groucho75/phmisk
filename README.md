@@ -54,7 +54,7 @@ $demo = new App\Controllers\Demo();
 
 $router->get('/test', function() use ( $demo ) {
 	
-	$demo->test($tpl);
+	$demo->test();
 });
 ```
 
