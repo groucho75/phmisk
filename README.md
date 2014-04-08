@@ -1,7 +1,7 @@
 phmisk
 ======
 
-Phmisk is a Php/Html MIcro Starter Kit.
+Phmisk is a Php/Html5 MIcro Starter Kit.
 It comes with:
 * an html5 UI, with css and jquery: html5boilerplate + bootstrap, from [Initializr](http://www.initializr.com)
 * a router: [bramus/router](https://github.com/bramus/router)
