@@ -30,6 +30,8 @@ Installation
    $ composer install  
    ```  
 4. set the permission of `app/cache` folder to 777
+5. edit the configuration in `app/config.php`
+6. edit the main `index.php`
 
 ***
 
@@ -168,8 +170,8 @@ For usage and more examples please see the [ORM homepage: VoodOrm](https://githu
 
 
 ***
-The app file structure
-----------------------
+The file structure
+------------------
 
 ```
 phmisk root/
@@ -202,12 +204,12 @@ The `ui` contains all the Html5boilerplate and Twittter Bootstrap folder and fil
 
 Phmisk comes out **without libraries** (router, template, ORM). You have to use Composer to install them. After that a new `vendor` folder will appear. 
 
+The `app/cache` folder contains some important files: 
+* `config.php`: here you can set database parameters and other settings;
+* `bootstrap.php`: the main classes (router, template, database and ORM) are initialised here;
+* `helpers.php`: tihs file contains some useful functions you can use everywhere.
 
-***
-Config, bootstrap, helpers
---------------------------
-
-TODO
+If you like to use other packages instead of standard (e.g. another template engine), you have to set them in `require` section inside `composer.json`, then change the initialisation in `bootstrap.php`.
 
 
 ***
