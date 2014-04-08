@@ -36,7 +36,7 @@ Routes
 
 ### Routing
 
-Add the simplest route in `index.php`:
+Add the simplest route in main `index.php`:
 ```php
 $router->get('/hello', function() {
 	
@@ -48,7 +48,7 @@ And you can visit `your-site.com/hello` to see it.
 
 ### Custom controller files
 
-You can map custom controller/method as a route: put your controllers inside `app\controllers` and they will be autoloded. Here is a route provided by custom controller called `Demo`:
+You can map custom controller/method as a route: put your controllers inside `app\controllers` and they will be autoloded. Then, you have to add a route statement in main `index.php`: here is a route provided by custom controller called `Demo`:
 ```php
 $demo = new App\Controllers\Demo();
 
