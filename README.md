@@ -74,7 +74,7 @@ class Demo extends Base
 
 ### Reference
 
-For usage and more examples please see the [router homepage: bramus/router](https://github.com/bramus/router.)
+For usage and more examples (Dynamic Route Patterns, Mounting Routes...) please see the [router homepage: bramus/router](https://github.com/bramus/router.)
 
 ***
 Templates
