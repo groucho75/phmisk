@@ -1,5 +1,4 @@
 # Cache
-app/cache
 app/cache/!index.html
 
 # Composer
