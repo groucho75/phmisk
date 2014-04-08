@@ -169,7 +169,30 @@ For usage and more examples please see the [ORM homepage: VoodOrm](https://githu
 The app file structure
 ----------------------
 
-TODO
+```
+phmisk root/
+  |
+  |__ app/
+  |      |__ cache/
+  |      |__ controllers/  
+  |      |  
+  |      |__ bootstrap.php
+  |      |__ config.php
+  |      |__ helpers.php  
+  |
+  |__ ui/
+  |      |__ css/
+  |      |__ fonts/  
+  |      |__ img/  
+  |      |__ js/    
+  |      |
+  |      |__ (php view files)  
+  |
+  |__ composer.json
+  |__ index.php
+  |__ .htaccess  
+```
+
 
 
 ***
