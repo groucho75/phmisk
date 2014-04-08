@@ -2,13 +2,14 @@ phmisk
 ======
 
 Phmisk is a Php/Html5 MIcro Starter Kit.
-It comes with:
-* an html5 UI, with css and jquery: html5boilerplate + bootstrap, from [Initializr](http://www.initializr.com)
+It comes with an **html5 UI**, with css and jquery: html5boilerplate + bootstrap, from [Initializr](http://www.initializr.com).
+Phmisk is ready to work with:
 * a router: [bramus/router](https://github.com/bramus/router)
 * a template engine: [rain.TPL](http://www.raintpl.com/)
 * an ORM database layer: [VoodOrm](https://github.com/mardix/VoodOrm)
 
-Then, Phmisk uses Composer so you can include and use all the libraries you need.
+Phmisk comes out *without these libraries* (router, template, ORM), so you have to use Composer to install them.
+Of course, using Composer you can include and use all libraries you need.
 
 ***
 
@@ -199,7 +200,7 @@ The `app/controllers` folder contains all your custom controllers and a `Base` c
 
 The `ui` contains all the Html5boilerplate and Twittter Bootstrap folder and files, generated using [Initializr](http://www.initializr.com/) and edited to work in Phmisk. Then, there are some php view files: header, home, footer...
 
-Phmisk comes out **without included libraries** (router, template, ORM). You have to use Composer to install them. After that a new `vendor` folder will appear. 
+Phmisk comes out **without libraries** (router, template, ORM). You have to use Composer to install them. After that a new `vendor` folder will appear. 
 
 
 ***
