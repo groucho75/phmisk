@@ -223,6 +223,11 @@ To include more packages you can simply add them in `require` section inside `co
 	},
 ```
 
+Then, in main `index.php` you can start using it writing:
+```php
+$log = new Monolog\Logger('name');
+```
+ 
 If you like to use other packages instead of standard (e.g. another template engine), you have to set them in `require` section inside `composer.json`, then change the initialisation in `bootstrap.php`.
 
 
