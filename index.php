@@ -10,6 +10,15 @@
  * @link		https://github.com/groucho75/phmisk
  */
 
+
+/**
+ * If 'vendor' folder does not exist, stop and alert
+ */
+if ( ! is_dir('vendor') )
+{
+	die('<h1>Ehi!</h1><strong>You have to launch <a href="https://getcomposer.org/doc/00-intro.md#installation-nix" target="_blank">Composer installation</a> to make Phmisk ready to work!</strong>');
+}
+
  
 /**
  * Set the environment: 'dev', 'test', 'live'
