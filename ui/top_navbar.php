@@ -14,7 +14,8 @@
 			
 			<div class="collapse navbar-collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="{#BASE_URL#}">Home</a></li>
+					<li><a href="{#BASE_URL#}">Home</a></li>
+					<li><a href="{#BASE_URL#}readme">Readme</a></li>					
 					<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Demos <b class="caret"></b></a>
 					<ul class="dropdown-menu">

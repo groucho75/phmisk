@@ -22,7 +22,8 @@
 		"php": ">=5.3.3",
 		"bramus/router": "dev-master",
 		"rain/raintpl":">=3.0.0",
-		"voodoophp/voodorm": "2.*"
+		"voodoophp/voodorm": "2.*",
+		"erusev/parsedown": "dev-master"		
 	},
     "autoload": {	
         "classmap": ["app/controllers/"],

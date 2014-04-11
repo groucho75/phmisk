@@ -105,6 +105,22 @@ $router->get('/test', function() use ( $demo, $tpl ) {
 });
 
 
+/**
+ * Render the README.md as pure html
+ */
+$router->get('/readme', function() use ( $tpl ){
+	$parsedown = new Parsedown();
+
+	$data = array(
+		'msg' 		=> 'Readme',
+		'html'		=> $parsedown->parse( file_get_contents('README.md') ),
+	);
+
+	$tpl->assign( $data );	
+    $tpl->draw( 'readme' );	
+});
+
+
 // Run it!
 $router->run();
 
