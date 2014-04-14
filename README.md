@@ -30,8 +30,8 @@ Installation
    $ composer install  
    ```  
 4. set the permission of `app/cache` folder to 777
-5. edit the configuration in `app/config.php`
-6. edit the main `index.php`
+5. edit `app/config.php` (database connection settings, php configurations)
+6. add your routes in the main `index.php`
 
 ***
 
@@ -121,6 +121,8 @@ ORM database layer
 ------------------
 
 Phmisk uses an ORM library built on top of [PDO](http://www.php.net/manual/en/book.pdo.php).
+
+First of all, set the database connection settings in `app/config.php`.
 
 In this `blog` route you get some posts and prepare them to be sent to layout: 
 ```php
