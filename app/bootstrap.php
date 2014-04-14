@@ -39,7 +39,7 @@ else
  * @link	https://github.com/mardix/VoodOrm
  * @link	http://mardix.github.io/VoodOrm/
  */
-if ( DB_USER != '' && ! DB_NAME != '' )
+if ( DB_USER != '' && DB_NAME != '' )
 {
     try {
     	$pdo = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS);
