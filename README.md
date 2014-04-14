@@ -226,7 +226,7 @@ The `app` folder contains some important files:
 Include more packages
 ---------------------
 
-To include more packages you can simply add them in `require` section inside `composer.json` and then launch Composer update:
+To include more php packages you can simply add them in `require` section inside `composer.json` and then launch Composer update:
 ```
 	"require": {
 		...
@@ -241,6 +241,7 @@ $log = new Monolog\Logger('name');
  
 If you like to use other packages instead of standard (e.g. another template engine), you have to set them in `require` section inside `composer.json`, then change the initialisation in `bootstrap.php`.
 
+If you need javascript libraries, of course you can get them via Composer, or you can download them and put in `ui` folder, or simply link their CDN from template files.
 
 ### Tutorials & Samples
 
