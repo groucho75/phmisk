@@ -79,7 +79,7 @@ The `Base` controller is a parent class you can extend to have shared methods.
 
 ### Reference
 
-For usage and more examples (Dynamic Route Patterns, Mounting Routes...) please see the [router homepage: bramus/router](https://github.com/bramus/router.)
+For usage and more examples (Dynamic Route Patterns, Mounting Routes...) please see the [router homepage: bramus/router](https://github.com/bramus/router).
 
 ***
 Templates
