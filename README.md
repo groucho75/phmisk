@@ -112,7 +112,7 @@ You can visit `your-site.com/hello/johnny` to see it.
 
 Note that template files are php files, so you can freely use php statements.
 
-It could be a good idea move the cache folder (`app/cache`) outside/above the site foot. Set the new path in `bootstrap.php`:
+It could be a good idea move the cache folder (`app/cache`) outside/above the site foot. Set the new path in `app/bootstrap.php`:
 ```php
 $tpl = new \Rain\Tpl();
 $tpl::configure( array(
