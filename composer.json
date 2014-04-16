@@ -26,7 +26,7 @@
 		"erusev/parsedown": "dev-master"		
 	},
     "autoload": {	
-        "classmap": ["app/controllers/"],
+        "classmap": ["app/controllers/", "app/libraries/"],
         "files": ["app/helpers.php"]
     }	
 }
