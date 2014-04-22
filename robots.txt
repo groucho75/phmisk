@@ -1,3 +1,0 @@
-# Remove when live
-User-agent: *
-Disallow: /
