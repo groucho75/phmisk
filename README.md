@@ -6,7 +6,7 @@ It comes with an **html5 UI**: Html5boilerplate and Twitter Bootstrap, from [Ini
 Phmisk is ready to work with:
 * a router: [bramus/router](https://github.com/bramus/router)
 * a template engine: [rain.TPL](http://www.raintpl.com/)
-* an ORM database layer: [VoodOrm](https://github.com/mardix/VoodOrm)
+* a database layer: [Sparrow](https://github.com/mikecao/sparrow)
 
 Phmisk comes out *without these libraries*, so you have to use Composer to install them.
 Of course, using Composer you can include and use also other libraries.
@@ -126,10 +126,10 @@ $tpl::configure( array(
 For usage and more examples please see the [template engine homepage: rain.TPL](http://www.raintpl.com).
 
 ***
-ORM database layer
-------------------
+Database layer
+--------------
 
-Phmisk uses an ORM library built on top of [PDO](http://www.php.net/manual/en/book.pdo.php).
+Phmisk uses a simple database toolkit.
 
 First of all, set the database connection settings in `app/config.php`.
 
@@ -137,11 +137,11 @@ In this `blog` route you get some posts and prepare them to be sent to layout:
 ```php
 $router->get('/blog', function() use ( $db, $tpl ) {
 
-	$results = $db->table('posts')->limit(5)->find();
+	$posts = $db->from('posts')
+			->select('title')
+			->limit(5)
+			->many();
 
-	$posts = array();
-	if ( $results ) foreach ($results as $item) $posts[] = array('title' => $item->title );
-	
 	$data = array(
 		'msg' 		=> 'My posts',
 		'posts'		=> $posts,
@@ -178,7 +178,7 @@ Just for your thirst for knowledge, here is the blog template file, `ui/blog.php
 
 ### Reference
 
-For usage and more examples please see the [ORM homepage: VoodOrm](https://github.com/mardix/VoodOrm).
+For usage and more examples please see the [databaase layer home: Sparrow](https://github.com/mikecao/sparrow).
 
 
 ***
