@@ -22,7 +22,7 @@
 		"php": ">=5.3.3",
 		"bramus/router": "dev-master",
 		"rain/raintpl":">=3.0.0",
-		"voodoophp/voodorm": "2.*",
+		"unlight/sparrow": "dev-master",
 		"erusev/parsedown": "dev-master"		
 	},
     "autoload": {	
