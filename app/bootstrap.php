@@ -36,8 +36,8 @@ else
 /**
  * Init the ORM Database layer
  *
- * @link	https://github.com/mardix/VoodOrm
- * @link	http://mardix.github.io/VoodOrm/
+ * @link	https://github.com/mikecao/sparrow
+ * @link	https://packagist.org/packages/unlight/sparrow
  */
 if ( DB_USER != '' && DB_NAME != '' )
 {
