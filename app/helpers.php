@@ -159,4 +159,17 @@ function array_map_recursive($fn, $arr) {
 endif;
 
 
+/**
+ * Return datetime in mysql format: YYYY-MM-DD HH:MM:SS
+ * 
+ * @return 	str		
+ */
+
+if ( ! function_exists('now')) :
+function now() {
+	return date('Y-m-d H:i:s');
+}	
+endif;
+
+
 /* EOF */
