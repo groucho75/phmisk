@@ -81,6 +81,17 @@ class Session
 
 
     /**
+     * Unset the value of a session item
+     * 
+     * @param str   the item key
+     */           
+    public function delete( $key ) 
+    { 
+        unset($_SESSION[$key]);
+    } 
+    
+    
+    /**
      * Set the value of a flash session item.
      * 
      * @param str   the item key
