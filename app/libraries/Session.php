@@ -26,7 +26,7 @@ class Session
      */      
     public function start() 
     {
-        if ( session_id == '' ) session_start();
+        if ( session_id() == '' ) session_start();
         
         if ( rand(1, 5) == 5 ) session_regenerate_id();
         
@@ -104,9 +104,9 @@ class Session
      */      
     public function getFlash( $key, $default=NULL )
     { 
-        if ( array_key_exists($key, $_SESSION['__flash__']) )
+        if ( isset($_SESSION['__flash__']) && array_key_exists($key, $_SESSION['__flash__']) )
         {
-            return $_SESSION['__flash__'][$key];
+            return $_SESSION['__flash__'][$key]['value'];
         } 
         else 
         {
