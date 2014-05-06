@@ -31,6 +31,7 @@ endif;
 * Return the current uri (relative path)
 *
 * @return str
+* @see	https://github.com/bramus/router/blob/master/src/Bramus/Router/Router.php
 */
 if ( ! function_exists('current_uri') ) :
 function current_uri() {
