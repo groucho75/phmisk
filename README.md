@@ -11,6 +11,8 @@ Phmisk is ready to work with:
 Phmisk comes out *without these libraries*, so you have to use Composer to install them.
 Of course, using Composer you can include and use also other libraries.
 
+You can see the [Wiki](https://github.com/groucho75/phmisk/wiki) to find some tutorials and guides.
+
 ***
 
 Installation
