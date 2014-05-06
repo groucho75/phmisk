@@ -78,4 +78,10 @@ $tpl::configure( array(
 $router = new \Bramus\Router\Router();
 
 
+/**
+ * Set the current URI (relative path) into a constant 
+ */
+define('CURRENT_URI', current_uri() );
+
+
 /* EOF */
