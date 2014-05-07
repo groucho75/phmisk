@@ -23,15 +23,15 @@ class Demo extends Base
     *
     * @param    obj     the template instance
     */    	
-	function test($tpl) 
+	function test($ph4) 
 	{
 		$data = array(
 			'msg' 		=> 'Demo->test()',
 			'text'		=> 'This page has been created by Test method of Demo custom controller, located in: app/controllers/Demo.php'
 		);
 				
-		$tpl->assign( $data );
-		$tpl->draw( 'message' );			
+		$ph4->tpl->assign( $data );
+		$ph4->tpl->draw( 'message' );			
 	}
 
 }

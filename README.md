@@ -250,3 +250,13 @@ If you need javascript libraries, of course you can get them via Composer, or yo
 ### Tutorials & Samples
 
 Please see the [Wiki](https://github.com/groucho75/phmisk/wiki) to find some tutorials about adding new packages.
+
+
+***
+Donations are welcome
+---------------------
+
+If you like my hard work, of course you can [donate some money to me](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9E6BPXEZVQYHA).
+
+And don't forget to donate something also to the authors of other libraries used by Phmisk (see above for repo and links).
+ 

@@ -11,6 +11,12 @@
  */
 
 
+
+/** -----------------------------------------------------------------
+ * Setup section
+ * ------------------------------------------------------------------ */
+
+ 
 /**
  * If 'vendor' folder does not exist, stop and alert
  */
@@ -27,19 +33,6 @@ define('ENV', 'dev');
 
 
 /**
- * Set the base url as a constant.
- *
- * It will be used in app and template files.
- */
-$base_url = ( (isset($_SERVER['HTTPS']) ) ? "https" : "http");
-$base_url .= "://".$_SERVER['HTTP_HOST'];
-$base_url .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER['SCRIPT_NAME']);
-$base_url = rtrim( $base_url,'/').'/'; // add a trailing slash
-define('BASE_URL', $base_url);
-
-
-
-/**
  * Composer autoload
  */
 require __DIR__ . '/vendor/autoload.php';
@@ -51,11 +44,16 @@ require __DIR__ . '/vendor/autoload.php';
 require __DIR__ . '/app/bootstrap.php';
 
 
+
+/** -----------------------------------------------------------------
+ * Start editing your routing
+ * ------------------------------------------------------------------ */
+ 
 	
 /**
  * Custom 404 Handler
  */
-$router->set404(function() use ($tpl) {
+$ph4->router->set404(function() use ($ph4) {
 	header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
 
 	$data = array(
@@ -64,17 +62,17 @@ $router->set404(function() use ($tpl) {
 		'glyphicon' => 'glyphicon-thumbs-down'
 	);
 	
-	$tpl->assign( $data );
-    $tpl->draw( 'message' );
+	$ph4->tpl->assign( $data );
+    $ph4->tpl->draw( 'message' );
 });
 
 
 /**
  * Before Router Middleware
  */
-$router->before('GET|POST', '/.*', function() use ( $tpl, $config ) {
+$ph4->router->before('GET|POST', '/.*', function() use ( $ph4 ) {
 	
-	$tpl->assign( 'config', $config );
+	$ph4->tpl->assign( 'config', $ph4->config );
 	
 });
 
@@ -82,16 +80,17 @@ $router->before('GET|POST', '/.*', function() use ( $tpl, $config ) {
 /**
  * The homepage
  */
-$router->get('/', function() use ( $tpl ) {
+$ph4->router->get('/', function() use ( $ph4 ) {
 
 	$data = array(
 		'msg' 		=> 'Hello World!',
 		'text'		=> 'Welcome!',
 	);
 	
-	$tpl->assign( $data );	
-    $tpl->draw( 'home' );
+	$ph4->tpl->assign( $data );	
+    $ph4->tpl->draw( 'home' );
 });
+
 
 
 /**
@@ -99,16 +98,16 @@ $router->get('/', function() use ( $tpl ) {
  */
 $demo = new App\Controllers\Demo();
 
-$router->get('/test', function() use ( $demo, $tpl ) {
+$ph4->router->get('/test', function() use ( $demo, $ph4 ) {
 	
-	$demo->test($tpl);
+	$demo->test($ph4);
 });
 
 
 /**
  * Render the README.md as pure html
  */
-$router->get('/readme', function() use ( $tpl ){
+$ph4->router->get('/readme', function() use ( $ph4 ){
 	$parsedown = new Parsedown();
 
 	$data = array(
@@ -116,13 +115,16 @@ $router->get('/readme', function() use ( $tpl ){
 		'html'		=> $parsedown->parse( file_get_contents('README.md') ),
 	);
 
-	$tpl->assign( $data );	
-    $tpl->draw( 'readme' );	
+	$ph4->tpl->assign( $data );	
+    $ph4->tpl->draw( 'readme' );	
 });
 
 
-// Run it!
-$router->run();
+/**
+ * Run it!
+ */
+$ph4->router->run();
+
 
 
 /* EOF */

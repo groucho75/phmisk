@@ -54,7 +54,7 @@ switch ( ENV )
  *
  * Feel free to create vars and use them in templates.
  */
-$config['site_title'] 		= 'My amazing site';
+$config['site_title'] 		= 'My Phmisk site';
 $config['site_description']	= 'My amazing site description';
 
 
