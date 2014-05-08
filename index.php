@@ -72,7 +72,7 @@ $ph4->router->set404(function() use ($ph4) {
  */
 $ph4->router->before('GET|POST', '/.*', function() use ( $ph4 ) {
 	
-	$ph4->tpl->assign( 'config', $ph4->config );
+	$ph4->tpl->assign( 'config', $ph4->get('config') );
 	
 });
 

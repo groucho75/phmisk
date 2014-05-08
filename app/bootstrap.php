@@ -107,16 +107,18 @@ $router = new \Bramus\Router\Router();
 
 
 /**
- * Init the Php Html Micro Starter Kit!
+ * Init the Php Html Micro Starter Kit
+ * and assign config and all instances to it.
  */
-$ph4 = new App\Libraries\Phmisk( array(
-	'config'=> $config,
-	'pdo'	=> $pdo,
-	'db'	=> $db,
-	'tpl'	=> $tpl,
-	'sess'	=> $sess,
-	'router'=> $router )
-);
+$ph4 = new App\Libraries\Phmisk();
+ 
+$ph4->set( 'config', $config );
+
+$ph4->load( 'pdo', $pdo );
+$ph4->load( 'db', $db );
+$ph4->load( 'tpl', $tpl );
+$ph4->load( 'sess', $sess );
+$ph4->load( 'router', $router );
 
 
 /* EOF */
