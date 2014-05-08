@@ -114,11 +114,11 @@ $ph4 = new App\Libraries\Phmisk();
  
 $ph4->set( 'config', $config );
 
-$ph4->load( 'pdo', $pdo );
-$ph4->load( 'db', $db );
-$ph4->load( 'tpl', $tpl );
-$ph4->load( 'sess', $sess );
-$ph4->load( 'router', $router );
+$ph4->load( $pdo );
+$ph4->load( $db );
+$ph4->load( $tpl );
+$ph4->load( $sess );
+$ph4->load( $router );
 
 
 /* EOF */

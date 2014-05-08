@@ -60,15 +60,37 @@ class Phmisk
 
     /**
      * Load an instance of another class as property.
+     *
+     * Usage:
+     * $ph4->load( 'myclass' )  		=> $ph4->myclass
+     * $ph4->load( 'myclass', 'my' )  	=> $ph4->my
      * 
-     * @param str   the property key
      * @param str   the instance
+     * @param str   the instance name used to name the property
      */      
-    public function load( $name, &$instance ) 
+    public function load( &$instance, $name=NULL ) 
     {
-		$this->$name = $instance;
+		$property = ( ! empty($name) ) ? $name : $this->var_name($instance);
+		$this->$property = $instance;
     }
     
+
+    /**
+     * Return the name of a variable.
+     * 
+     * @param mix   the var
+     * @return str   the var name
+     */   
+	private function var_name($var) 
+	{
+		foreach($GLOBALS as $var_name => $value) {
+			if ($value === $var) {
+				return $var_name;
+			}
+		}
+		return FALSE;
+	}    
+	
 }
 
 
