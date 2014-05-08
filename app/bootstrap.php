@@ -52,9 +52,71 @@ define('CURRENT_URI', current_uri() );
 
 
 /**
+ * Init the ORM Database layer
+ *
+ * @link	https://github.com/mikecao/sparrow
+ * @link	https://packagist.org/packages/unlight/sparrow
+ */
+$pdo = FALSE;
+$db = FALSE; 
+if ( DB_USER != '' && DB_NAME != '' )
+{
+    try {
+    	$pdo = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS);
+    	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    	$pdo->exec("SET NAMES 'utf8';");
+    	
+    	$db = new \Sparrow();
+        $db->setDb($pdo);
+    } catch( PDOException $e ) {
+    	echo '<strong>Impossibile to connect to database: please check the parameters provided in /app/config.php.</strong><br />'. $e->getMessage();
+    }
+}
+    
+
+/**
+ * Init the template engine
+ *
+ * @link	http://www.raintpl.com
+ * @link	https://github.com/rainphp/raintpl3/wiki
+ */
+$tpl = new \Rain\Tpl();
+$tpl::configure( array(
+	"base_url"		=> BASE_URL,
+	"tpl_ext"		=> "php",
+	'php_enabled'	=> true,
+	"tpl_dir"       => "ui/",
+	"cache_dir"     => "app/cache/"
+));
+
+
+/**
+* Init the session class
+*
+* @see /app/libraries/Session.php
+*/	
+$sess = new App\Libraries\Session();
+
+
+/**
+ * Init the Router
+ *
+ * @link	https://github.com/bramus/router
+ */
+$router = new \Bramus\Router\Router();
+
+
+/**
  * Init the Php Html Micro Starter Kit!
  */
-$ph4 = new App\Libraries\Phmisk($config);
+$ph4 = new App\Libraries\Phmisk( array(
+	'config'=> $config,
+	'pdo'	=> $pdo,
+	'db'	=> $db,
+	'tpl'	=> $tpl,
+	'sess'	=> $sess,
+	'router'=> $router )
+);
 
 
 /* EOF */
