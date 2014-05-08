@@ -52,6 +52,12 @@ define('CURRENT_URI', current_uri() );
 
 
 /**
+ * Detect if the request is an AJAX request, or a standard HTTP request.
+ */
+define('IS_AJAX', isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest');
+
+
+/**
  * Init the ORM Database layer
  *
  * @link	https://github.com/mikecao/sparrow
