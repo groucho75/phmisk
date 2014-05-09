@@ -10,7 +10,7 @@ namespace App\Core;
  * only in next round (e.g. feedbacks and messages to user).
  *
  * @package     Phmisk
- * @subpackage  Libraries
+ * @subpackage  Core
  * @author      Alessandro Massasso <alo@eventualo.net>
  * @license     GPL
  * @link        https://github.com/groucho75/phmisk

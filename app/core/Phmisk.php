@@ -9,7 +9,7 @@ namespace App\Core;
  * classes.
  *
  * @package     Phmisk
- * @subpackage  Libraries
+ * @subpackage  Core
  * @author      Alessandro Massasso <alo@eventualo.net>
  * @license     GPL
  * @link        https://github.com/groucho75/phmisk
