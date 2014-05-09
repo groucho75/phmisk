@@ -1,6 +1,6 @@
 <?php 
 
-namespace App\Libraries;
+namespace App\Core;
 
 /**
  * Main Phmisk class

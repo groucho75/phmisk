@@ -101,7 +101,7 @@ $tpl::configure( array(
 *
 * @see /app/libraries/Session.php
 */	
-$sess = new App\Libraries\Session();
+$sess = new App\Core\Session();
 
 
 /**
@@ -116,7 +116,7 @@ $router = new \Bramus\Router\Router();
  * Init the Php Html Micro Starter Kit
  * and assign config and all instances to it.
  */
-$ph4 = new App\Libraries\Phmisk();
+$ph4 = new App\Core\Phmisk();
  
 $ph4->set( 'config', $config );
 
