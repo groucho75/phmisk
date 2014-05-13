@@ -59,16 +59,16 @@ class Phmisk
 
 
     /**
-     * Load an instance of another class as property.
+     * Append an instance of another class as property.
      *
      * Usage:
-     * $ph4->load( 'myclass' )  		=> $ph4->myclass
-     * $ph4->load( 'myclass', 'my' )  	=> $ph4->my
+     * $ph4->append( $myclass )  		=> $ph4->myclass
+     * $ph4->append( $myclass, 'myc' )  => $ph4->myc
      * 
      * @param str   the instance
      * @param str   the instance name used to name the property
      */      
-    public function load( &$instance, $name=NULL ) 
+    public function append( &$instance, $name=NULL ) 
     {
 		$property = ( ! empty($name) ) ? $name : $this->var_name($instance);
 		$this->$property = $instance;

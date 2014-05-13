@@ -58,22 +58,31 @@ define('IS_AJAX', isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVE
 
 
 /**
+ * Init the Php Html Micro Starter Kit
+ * and assign config and all instances to it.
+ */
+$ph4 = new App\Core\Phmisk();
+ 
+$ph4->set( 'config', $config );
+
+
+/**
  * Init the ORM Database layer
  *
  * @link	https://github.com/mikecao/sparrow
  * @link	https://packagist.org/packages/unlight/sparrow
  */
-$pdo = FALSE;
-$db = FALSE; 
+$ph4->pdo = FALSE;
+$ph4->db = FALSE; 
 if ( DB_USER != '' && DB_NAME != '' )
 {
     try {
-    	$pdo = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS);
-    	$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    	$pdo->exec("SET NAMES 'utf8';");
+    	$ph4->pdo = new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME, DB_USER, DB_PASS);
+    	$ph4->pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    	$ph4->pdo->exec("SET NAMES 'utf8';");
     	
-    	$db = new \Sparrow();
-        $db->setDb($pdo);
+    	$ph4->db = new \Sparrow();
+        $ph4->db->setDb($ph4->pdo);
     } catch( PDOException $e ) {
     	echo '<strong>Impossibile to connect to database: please check the parameters provided in /app/config.php.</strong><br />'. $e->getMessage();
     }
@@ -86,8 +95,8 @@ if ( DB_USER != '' && DB_NAME != '' )
  * @link	http://www.raintpl.com
  * @link	https://github.com/rainphp/raintpl3/wiki
  */
-$tpl = new \Rain\Tpl();
-$tpl::configure( array(
+$ph4->tpl = new \Rain\Tpl();
+$ph4->tpl->configure( array(
 	"base_url"		=> BASE_URL,
 	"tpl_ext"		=> "php",
 	'php_enabled'	=> true,
@@ -101,7 +110,7 @@ $tpl::configure( array(
 *
 * @see /app/libraries/Session.php
 */	
-$sess = new App\Core\Session();
+$ph4->sess = new App\Core\Session();
 
 
 /**
@@ -109,22 +118,8 @@ $sess = new App\Core\Session();
  *
  * @link	https://github.com/bramus/router
  */
-$router = new \Bramus\Router\Router();
+$ph4->router = new \Bramus\Router\Router();
 
-
-/**
- * Init the Php Html Micro Starter Kit
- * and assign config and all instances to it.
- */
-$ph4 = new App\Core\Phmisk();
- 
-$ph4->set( 'config', $config );
-
-$ph4->load( $pdo );
-$ph4->load( $db );
-$ph4->load( $tpl );
-$ph4->load( $sess );
-$ph4->load( $router );
 
 
 /* EOF */
