@@ -70,8 +70,13 @@ class Phmisk
      */      
     public function append( &$instance, $name=NULL ) 
     {
-		$property = ( ! empty($name) ) ? $name : $this->var_name($instance);
-		$this->$property = $instance;
+		$name = ( ! empty($name) ) ? $name : $this->var_name($instance);
+		
+		if ( method_exists($this, $name) ) {
+			die( sprintf('You cannot use the name "%s" because it is already in use by %s', $name, get_class($this) ) );
+        }
+        
+		$this->$name = $instance;
     }
     
 
