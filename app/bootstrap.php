@@ -101,7 +101,7 @@ $ph4->tpl->configure( array(
 	"tpl_ext"		=> "php",
 	'php_enabled'	=> true,
 	"tpl_dir"       => "ui/",
-	"cache_dir"     => "app/cache/"
+	"cache_dir"     => APP_PATH."/cache/"
 ));
 
 

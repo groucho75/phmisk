@@ -33,6 +33,13 @@ define('ENV', 'dev');
 
 
 /**
+ * Set the path to 'app' folder, without slashes. Default: 'app'
+ * For security you can move it above web root, e.g.: '../app'
+ */
+define('APP_PATH', 'app');
+
+
+/**
  * Composer autoload
  */
 require __DIR__ . '/vendor/autoload.php';
@@ -41,7 +48,7 @@ require __DIR__ . '/vendor/autoload.php';
 /**
  * Init the application
  */
-require __DIR__ . '/app/bootstrap.php';
+require __DIR__ .'/'. APP_PATH . '/bootstrap.php';
 
 
 
