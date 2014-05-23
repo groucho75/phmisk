@@ -19,15 +19,8 @@ Installation
 ------------
 
 1. download and install [Composer](https://getcomposer.org/doc/00-intro.md#installation-nix) on your machine
-2. clone/download this repository
+2. download this repository
 3. go to phmisk directory and launch Composer install to resolve and download required packages:  
-
-   if Composer local installation:  
-   ```  
-   $ php composer.phar install  
-   ```  
-   if Composer global installation:  
-
    ```  
    $ composer install  
    ```  
@@ -44,23 +37,27 @@ In this sample setup the app folder has been moved *one level above* the web roo
 * you have to set it in `index.php`:
 
 ```php
-/**
- * Set the path to 'app' folder, without slashes. Default: 'app'
- * For security you can move it above web root, e.g.: '../app'
- */
 define('APP_PATH', '../app');
 ```
 
-* you have to set it in autoload section in `composer.json`:
+* you have to set it in config and autoload sections in `composer.json`:
 
 ```
+	"config": {
+        "vendor-dir": "../app/vendor"
+    },
+    ...
     "autoload": {	
         "classmap": ["../app/core/", "../app/controllers/", "../app/libraries/"],
         "files": ["../app/helpers.php"]
     }	
 ```
 
-* then, do not forget to launch **composer update**!
+* then, do not forget to launch the **composer update**:
+
+```  
+$ composer update  
+```  
 
 
 ***
@@ -253,7 +250,7 @@ It could be a good idea move the app folder outside/above the site foot.
 
 The `ui` contains all the Html5boilerplate and Twitter Bootstrap folder and files, generated using [Initializr](http://www.initializr.com/) and edited to work in Phmisk. Then, there are some php view files: header, home, footer...
 
-Phmisk comes out **without libraries** (router, template, ORM). You have to use Composer to install them. After that a new `vendor` folder will appear. 
+Phmisk comes out **without libraries** (router, template, ORM). You have to use Composer to install them. After that a new `app/vendor` folder will appear. 
 
 The `app` folder contains some important files: 
 * `config.php`: here you can set database parameters and other settings;

@@ -2,7 +2,7 @@
 app/cache/!index.html
 
 # Composer
-/vendor
+/app/vendor
 composer.lock
 
 # Aptana IDE
