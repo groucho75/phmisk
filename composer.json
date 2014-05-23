@@ -18,6 +18,9 @@
         "wiki": "https://github.com/groucho75/phmisk/wiki",
         "source": "https://github.com/groucho75/phmisk"
     },
+	"config": {
+        "vendor-dir": "app/vendor"
+    },
 	"require": {
 		"php": ">=5.3.3",
 		"bramus/router": "dev-master",

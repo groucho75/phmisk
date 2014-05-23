@@ -15,16 +15,6 @@
 /** -----------------------------------------------------------------
  * Setup section
  * ------------------------------------------------------------------ */
-
- 
-/**
- * If 'vendor' folder does not exist, stop and alert
- */
-if ( ! is_dir('vendor') )
-{
-	die('<h1>Ehi!</h1><strong>You have to launch <a href="https://getcomposer.org/doc/00-intro.md#installation-nix" target="_blank">Composer installation</a> to make Phmisk ready to work!</strong>');
-}
-
  
 /**
  * Set the environment: 'dev', 'test', 'live'
@@ -40,9 +30,18 @@ define('APP_PATH', 'app');
 
 
 /**
+ * If 'vendor' folder does not exist, stop and alert
+ */
+if ( ! is_dir(APP_PATH . '/vendor') )
+{
+	die('<h1>Ehi!</h1><strong>You have to launch <a href="https://getcomposer.org/doc/00-intro.md#installation-nix" target="_blank">Composer installation</a> to make Phmisk ready to work!</strong>');
+}
+
+
+/**
  * Composer autoload
  */
-require __DIR__ . '/vendor/autoload.php';
+require __DIR__ .'/'. APP_PATH . '/vendor/autoload.php';
 
 
 /**
