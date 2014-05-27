@@ -224,6 +224,7 @@ phmisk root/
   |      |__ controllers/
   |      |__ core/    
   |      |__ libraries/  
+  |      |__ (vendor/)    
   |      |  
   |      |__ bootstrap.php
   |      |__ config.php
