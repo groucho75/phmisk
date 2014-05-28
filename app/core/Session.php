@@ -21,14 +21,17 @@ class Session
     /**
      * Start the session.
      * 
-     * Init the php session, often regenerate the session id,
+     * Init the php session if not yet, often regenerate the session id,
      * update/delete the flash msgs.
      */      
     public function start() 
     {
-        if ( session_id() == '' ) session_start();
-        
-        if ( rand(1, 5) == 5 ) session_regenerate_id();
+        if ( session_id() == '' ) 
+        {         
+            session_start();
+    
+            if ( rand(1, 5) == 5 ) session_regenerate_id();
+        }
         
         if (isset($_SESSION['__flash__'])) 
         { 
