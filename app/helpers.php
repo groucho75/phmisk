@@ -184,6 +184,37 @@ endif;
 
 
 /**
+ * Returns only the array items specified.  Will return a default value if
+ * it is not set.
+ * 
+ * @link	http://ellislab.com/codeigniter/user-guide/helpers/array_helper.html
+ */
+ 
+if ( ! function_exists('whitelist')) :
+function whitelist($items, $array, $default = FALSE)
+{
+	$return = array();
+	
+	if ( ! is_array($items)) $items = array($items);
+	
+	foreach ($items as $item)
+	{
+		if (isset($array[$item]))
+		{
+			$return[$item] = $array[$item];
+		}
+		else
+		{
+			$return[$item] = $default;
+		}
+	}
+
+	return $return;
+}
+endif;
+
+
+/**
  * Return datetime in mysql format: YYYY-MM-DD HH:MM:SS
  * 
  * @return 	str		
