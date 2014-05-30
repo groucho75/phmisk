@@ -26,12 +26,9 @@ class Session
      */      
     public function start() 
     {
-        if ( session_id() == '' ) 
-        {         
-            session_start();
-    
-            if ( rand(1, 5) == 5 ) session_regenerate_id();
-        }
+        if ( session_id() == '' ) @session_start();
+        
+        if ( rand(1, 5) == 5 ) session_regenerate_id();        
         
         if (isset($_SESSION['__flash__'])) 
         { 
