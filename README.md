@@ -213,6 +213,33 @@ For usage and more examples please see the [databaase layer home: Sparrow](https
 
 
 ***
+
+Sessions
+--------
+
+Phmisk comes with a simple wrapper for php session management. It helps to start and destroy session, set and delete session vars. 
+It helps to use "flash" vars: session data that live only in next round (e.g. feedbacks and messages to user).
+
+```php
+// Init the session
+$ph4->sess->start();
+
+// Set a session var
+$ph4->sess->set('my_var', 1);
+
+// Set a flash var (it will exist till next round)
+$ph4->sess->setFlash('my_flash_var', 1);
+
+// Get a session var (the 2nd argument is a default if var not found)
+$ph4->sess->get('my_var', 0);
+```
+
+### Reference
+
+For more info please browse the [Session class](https://github.com/groucho75/phmisk/blob/master/app/core/Session.php).
+
+
+***
 The file structure
 ------------------
 
