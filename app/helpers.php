@@ -52,6 +52,55 @@ endif;
 
 
 /**
+* Return the segments of the current uri
+*
+* @return array
+*/
+if ( ! function_exists('uri_segments') ) :
+function uri_segments() {
+
+	return explode('/', current_uri());
+}
+endif;
+
+
+/**
+* Generate a key value pair from the uri string, starting from selected segment
+*
+* @see https://github.com/EllisLab/CodeIgniter/blob/develop/system/core/URI.php
+* @param int the starting segment number
+* @return array
+*/
+if ( ! function_exists('uri_pairs') ) :
+function uri_pairs( $start = 3 ) {
+
+	$allSegments = uri_segments();
+	
+	$segments = array_slice($allSegments, ($start - 1));
+	
+	$i = 0;
+	$lastval = '';
+	$retval  = array();
+	foreach ($segments as $seg)
+	{
+		if ($i % 2)
+		{
+			$retval[$lastval] = $seg;
+		}
+		else
+		{
+			$retval[$seg] = FALSE;
+			$lastval = $seg;
+		}
+
+		$i++;
+	}
+	return $retval;
+}
+endif;
+
+
+/**
 * Print (using "print_r") an array inside <pre> html tag.
 * Useful and readable for debug purpose.
 *
