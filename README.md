@@ -1,7 +1,7 @@
 phmisk
 ======
 
-[Phmisk](https://github.com/groucho75/phmisk) is a Php/Html5 MIcro Starter Kit.
+[Phmisk](https://github.com/groucho75/phmisk) (*/piː eɪtʃ miːsk/* or */f miːsk/* or */wɒt ðə fʌk/* or whatever) is a Php/Html5 MIcro Starter Kit.
 It comes with an **html5 UI**: Html5boilerplate and Twitter Bootstrap, from [Initializr](http://www.initializr.com).
 Phmisk is ready to work with:
 * a router: [bramus/router](https://github.com/bramus/router)
