@@ -26,7 +26,12 @@ Installation
    ```  
 4. set the permission of `app/cache` folder to 775 or 777
 5. edit `app/config.php` (database connection settings, php configurations)
-6. add your routes in the main `index.php`
+6. add your routes in the main `routes.php`
+
+### Set the environment
+
+In `index.php` you can set the application environment: development, testing, live (production). 
+You can use it to have application behavior depending on environment: e.g. database settings, show/hide errors. 
 
 ### Secure the app folder
 
@@ -53,7 +58,7 @@ define('APP_PATH', '../app');
     }	
 ```
 
-* then, do not forget to launch the **composer update**:
+* then, do not forget to launch the composer install/update:
 
 ```  
 $ composer update  
@@ -65,9 +70,9 @@ $ composer update
 $ph4
 ----
 
-You can write your application editing the main `index.php`.
+You can write your application editing the `routes.php`.
 
-It loads and initialises Phmisk, then it creates the `$ph4` object that contains the instances of main libraries.
+You can use a Phmisk object called `$ph4` that contains the instances of main libraries.
 In this page you can read about how to use these libraries.
 
 You are right, $ph4 means 'ph' plus 4 characters ('misk').
@@ -79,7 +84,7 @@ Routes
 
 ### Routing
 
-Add the simplest route in main `index.php`:
+Add the simplest route in main `routes.php`:
 ```php
 $ph4->router->get('/hello', function() {
 	
@@ -91,7 +96,7 @@ And you can visit `your-site.com/hello` to see it.
 
 ### Custom controller files
 
-You can map custom controller/method as a route: put your controllers inside `app/controllers` and they will be autoloded. Then, you have to add a route statement in main `index.php`: here is a route provided by custom controller called `Demo`:
+You can map custom controller/method as a route: put your controllers inside `app/controllers` and they will be autoloded. Then, you have to add a route statement in `routes.php`: here is a route provided by custom controller called `Demo`:
 ```php
 $demo = new App\Controllers\Demo();
 
@@ -123,7 +128,7 @@ For usage and more examples (Dynamic Route Patterns, Mounting Routes...) please 
 ***
 Templates
 ---------
-To use the template engine in a route you have to add `use ($ph4)` to the function and you can use it as `$ph4->tpl`. A route in `index.php` could be:
+To use the template engine in a route you have to add `use ($ph4)` to the function and you can use it as `$ph4->tpl`. A route in `routes.php` could be:
 ```php
 $ph4->router->get('/hello/(\w+)', function($name) use ( $ph4 ) {
 	
@@ -267,6 +272,7 @@ phmisk root/
   |
   |__ composer.json
   |__ index.php
+  |__ routes.php
   |__ .htaccess  
 ```
 
@@ -298,7 +304,7 @@ To include more php packages you can simply add them in `require` section inside
 	},
 ```
 
-Then, in main `index.php` you can start using it writing:
+Then, in main `routes.php` you can start using it writing:
 ```php
 $log = new Monolog\Logger('name');
 ```
@@ -318,5 +324,5 @@ Donations are welcome
 
 If you like my hard work, of course you can [donate some money to me](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9E6BPXEZVQYHA).
 
-And don't forget to donate something also to the authors of other libraries used by Phmisk (see above for repo and links).
+And don't forget to donate something also to the authors of other libraries used by Phmisk (see above for repo and links). 
  
