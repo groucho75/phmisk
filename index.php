@@ -16,6 +16,7 @@
  * Setup section
  * ------------------------------------------------------------------ */
  
+ 
 /**
  * Set the environment: 'dev', 'test', 'live'
  */
@@ -29,6 +30,13 @@ define('ENV', 'dev');
 define('APP_PATH', 'app');
 
 
+
+
+/** -----------------------------------------------------------------
+ * Load & init Phmisk
+ * ------------------------------------------------------------------ */
+ 
+ 
 /**
  * If 'vendor' folder does not exist, stop and alert
  */
@@ -50,84 +58,14 @@ require __DIR__ .'/'. APP_PATH . '/vendor/autoload.php';
 require __DIR__ .'/'. APP_PATH . '/bootstrap.php';
 
 
-
-/** -----------------------------------------------------------------
- * Start editing your routing
- * ------------------------------------------------------------------ */
- 
-	
 /**
- * Custom 404 Handler
+ * Load the routes
  */
-$ph4->router->set404(function() use ($ph4) {
-	header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
-
-	$data = array(
-		'msg' 		=> 'Sorry, page not found!',
-		'text'		=> 'This a 404 error page. What are you looking for?',
-		'glyphicon' => 'glyphicon-thumbs-down'
-	);
+require __DIR__ .'/routes.php';
 	
-	$ph4->tpl->assign( $data );
-    $ph4->tpl->draw( 'message' );
-});
-
 
 /**
- * Before Router Middleware
- */
-$ph4->router->before('GET|POST', '/.*', function() use ( $ph4 ) {
-	
-	$ph4->tpl->assign( 'config', $ph4->get('config') );
-	
-});
-
-
-/**
- * The homepage
- */
-$ph4->router->get('/', function() use ( $ph4 ) {
-
-	$data = array(
-		'msg' 		=> 'Hello World!',
-		'text'		=> 'Welcome!',
-	);
-	
-	$ph4->tpl->assign( $data );	
-    $ph4->tpl->draw( 'home' );
-});
-
-
-
-/**
- * Map a custom class/method as a route
- */
-$demo = new App\Controllers\Demo();
-
-$ph4->router->get('/test', function() use ( $demo, $ph4 ) {
-	
-	$demo->test($ph4);
-});
-
-
-/**
- * Render the README.md as pure html
- */
-$ph4->router->get('/readme', function() use ( $ph4 ){
-	$parsedown = new Parsedown();
-
-	$data = array(
-		'msg' 		=> 'Readme',
-		'html'		=> $parsedown->parse( file_get_contents('README.md') ),
-	);
-
-	$ph4->tpl->assign( $data );	
-    $ph4->tpl->draw( 'readme' );	
-});
-
-
-/**
- * Run it!
+ * ...let's go!
  */
 $ph4->router->run();
 
