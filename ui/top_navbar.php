@@ -17,7 +17,7 @@
 					<li class="{if="CURRENT_URI == '/'"}active{/if}"><a href="{#BASE_URL#}">Home</a></li>
 					<li class="{if="CURRENT_URI == '/readme'"}active{/if}"><a href="{#BASE_URL#}readme">Readme</a></li>					
 					<li class="dropdown">
-					<a href="#" class="dropdown-toggle" data-toggle="dropdown">Demos <b class="caret"></b></a>
+					<a href="#" class="dropdown-toggle needsclick" data-toggle="dropdown">Demos <b class="caret"></b></a>
 					<ul class="dropdown-menu">
 						<li class="dropdown-header">Custom controller</li>
 						<li class="{if="CURRENT_URI == '/test'"}active{/if}"><a href="{#BASE_URL#}test">$demo->test()</a></li>

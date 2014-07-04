@@ -25,6 +25,12 @@
 		ga('create','UA-XXXXX-X');ga('send','pageview');
 	</script>
 	-->
-	
+
+	<script type="text/javascript">
+	$(function() {
+		FastClick.attach(document.body);
+	});
+	</script>
+		
 </body>
 </html>

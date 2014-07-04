@@ -38,6 +38,8 @@
 
 		<script src="ui/js/vendor/bootstrap.min.js"></script>
 
+		<script src="//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.2/fastclick.min.js"></script>
+		
 		<script src="ui/js/plugins.js"></script>
 		<script src="ui/js/main.js"></script>
 				
