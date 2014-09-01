@@ -59,7 +59,7 @@ class View
 		
 		ob_start();
 		extract( $this->vars );
-		include UI_PATH.'/'.$file;
+		include UI_PATH.'/'.$file.'.php';
 		$html = ob_get_clean();                
 		
 		if ( $return_string ) return $html; else echo $html;
