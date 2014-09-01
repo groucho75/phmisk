@@ -30,6 +30,11 @@ define('ENV', 'dev');
 define('APP_PATH', 'app');
 
 
+/**
+ * Set the path to 'ui' folder, without slashes. Default: 'ui'
+ */
+define('UI_PATH', 'ui');
+
 
 
 /** -----------------------------------------------------------------

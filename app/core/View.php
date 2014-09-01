@@ -27,25 +27,43 @@ class View
     /**
      * Set the value of a var
      * 
-     * @param str   the item key
-     * @param str   the new value 
-     * @param bol   apply the xss_clean filter
+     * @param str   	the var name, or array of vars
+     * @param str|bol  	the var value, or apply the xss_clean filter
+     * @param bol   	apply the xss_clean filter
      */    
-    public function assign( $var, $value ) 
+    public function assign( $first, $second=FALSE, $third=FALSE ) 
     {
-        if ( is_array($var) )
+        if ( is_array($first) )
         {
-            // array_map_recursive( xssafe )
-            $this->vars = $var + $this->vars;
+            if ( $second ) $first = array_map_recursive( 'xssafe', $first );
+            
+            $this->vars = $first + $this->vars;
         }
         else
         {
-            // TODO xssafe
-            $this->vars[$var] = $value;
+            if ( $third ) $second = xssafe( $second );
+            
+            $this->vars[$first] = $second;
         }
-        
-                
     }        
+
+
+    /**
+     * Render the layout view 
+     * 
+     * @param str   the view filename without extension
+     * @param bol   echo or return as string
+     */    
+    public function render( $file, $return_string = FALSE ) 
+    {
+		
+		ob_start();
+		extract( $this->vars );
+		include UI_PATH.'/'.$file;
+		$html = ob_get_clean();                
+		
+		if ( $return_string ) return $html; else echo $html;
+    }            
 }
 
 
