@@ -4,13 +4,13 @@ phmisk
 [Phmisk](https://github.com/groucho75/phmisk) (*/piː eɪtʃ miːsk/* or */f miːsk/* or */wɑtˈevər/* or */wɒt ðə fʌk/*) is a **Php/Html5 MIcro Starter Kit**.
 It comes with an **html5 UI**: Html5boilerplate and Twitter Bootstrap, from [Initializr](http://www.initializr.com).
 Phmisk is ready to work with:
-* a router: [bramus/router](https://github.com/bramus/router)
-* a database layer: [Sparrow](https://github.com/mikecao/sparrow)
+* a router: [bramus/router](https://github.com/bramus/router) (1)
+* a database layer: [Sparrow](https://github.com/mikecao/sparrow) (1)
 * a simple session manager
 * a simple template engine
 
-Phmisk comes out *without these libraries*, so you have to use Composer to install them.
-Of course, using Composer you can include and use also other libraries.
+(1) *Phmisk comes out without these libraries, so you have to use Composer to install them.
+Of course, using Composer you can include and use also other libraries.*
 
 You can see the [Wiki](https://github.com/groucho75/phmisk/wiki) to find some tutorials and guides.
 
