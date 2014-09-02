@@ -30,8 +30,8 @@ $ph4->router->set404(function() use ($ph4) {
         'glyphicon' => 'glyphicon-thumbs-down'
     );
     
-    $ph4->tpl->assign( $data );
-    $ph4->tpl->draw( 'message' );
+    $ph4->view->assign( $data, true );
+    $ph4->view->render( 'message' );
 });
 
 
@@ -41,7 +41,7 @@ $ph4->router->set404(function() use ($ph4) {
  */
 $ph4->router->before('GET|POST', '/.*', function() use ( $ph4 ) {
     
-    $ph4->tpl->assign( 'config', $ph4->get('config') );
+    $ph4->view->assign( 'config', $ph4->get('config') );
     
 });
 
@@ -56,8 +56,8 @@ $ph4->router->get('/', function() use ( $ph4 ) {
         'text'      => 'Welcome!',
     );
     
-    $ph4->tpl->assign( $data ); 
-    $ph4->tpl->draw( 'home' );
+    $ph4->view->assign( $data, true ); 
+    $ph4->view->render( 'home' );
 });
 
 
@@ -84,8 +84,8 @@ $ph4->router->get('/readme', function() use ( $ph4 ){
         'html'      => $parsedown->parse( file_get_contents('README.md') ),
     );
 
-    $ph4->tpl->assign( $data ); 
-    $ph4->tpl->draw( 'readme' );    
+    $ph4->view->assign( $data ); 
+    $ph4->view->render( 'readme' );    
 });
 
 

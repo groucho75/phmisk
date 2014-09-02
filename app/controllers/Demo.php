@@ -30,8 +30,8 @@ class Demo extends Base
 			'text'		=> 'This page has been created by Test method of Demo custom controller, located in: app/controllers/Demo.php'
 		);
 				
-		$ph4->tpl->assign( $data );
-		$ph4->tpl->draw( 'message' );			
+		$ph4->view->assign( $data );
+		$ph4->view->render( 'message' );			
 	}
 
 }

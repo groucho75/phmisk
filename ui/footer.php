@@ -9,7 +9,7 @@
 		Made with <a href="https://github.com/groucho75/phmisk" title="Phmisk is a Php/Html5 MIcro Starter Kit" target="_blank">Phmisk</a>
 		</p>		
 		      	
-        <p class="text-muted">{$config.site_description}</p>
+        <p class="text-muted"><?=$config['site_description']?></p>
       </div>
 
     </div> <!-- /.container -->

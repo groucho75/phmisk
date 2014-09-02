@@ -90,19 +90,11 @@ if ( DB_USER != '' && DB_NAME != '' )
     
 
 /**
- * Init the template engine
- *
- * @link	http://www.raintpl.com
- * @link	https://github.com/rainphp/raintpl3/wiki
- */
-$ph4->tpl = new \Rain\Tpl();
-$ph4->tpl->configure( array(
-	"base_url"		=> BASE_URL,
-	"tpl_ext"		=> "php",
-	'php_enabled'	=> true,
-	"tpl_dir"       => "ui/",
-	"cache_dir"     => APP_PATH."/cache/"
-));
+* Init the view class
+*
+* @see /app/libraries/View.php
+*/	
+$ph4->view = new App\Core\View();
 
 
 /**

@@ -7,15 +7,15 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
-        <base href="{#BASE_URL#}">
+        <base href="<?=BASE_URL?>">
         		
-        <title>{$config.site_title}</title>
-        <meta name="description" content="{$config.site_title}">
+        <title><?=$config['site_title']?></title>
+        <meta name="description" content="<?=$config['site_title']?>">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-		{if="ENV != 'live'"}
+		<?php if ( ENV != 'live' ) : ?>
 		<meta name="robots" content="noindex">
-		{/if}
+		<?php endif; ?>
 		
         <link rel="stylesheet" href="ui/css/bootstrap.min.css">
         <style>
