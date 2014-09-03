@@ -226,7 +226,7 @@ Note that you have to add `use ($ph4)` to the function and then you can use it a
 The database connection parameters are set in `app/config.php` and the connection starts in `app/bootstrap.php`.
 
 Just for your thirst for knowledge, here is the blog template file, `ui/blog.php`:
-```html
+```php
 <?php include __DIR__.'/header.php' ?>
 
 	<div class="container">
