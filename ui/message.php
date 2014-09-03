@@ -9,7 +9,7 @@
 
 		<div class="container">
 			<div class="page-header">
-				<h1><span class="glyphicon <?php echo ( isset($glyphicon) ) ? $glyphicon: 'glyphicon-asterisk'?> "></span> <?=$msg?></h1>
+				<h1><span class="glyphicon <?php echo ( isset($glyphicon) ) ? $glyphicon: 'glyphicon-asterisk'?> "></span> <?=$title?></h1>
 			</div>
 			<p class="lead"><?=$text?></p>
 		</div>
