@@ -25,7 +25,7 @@ $ph4->router->set404(function() use ($ph4) {
     header($_SERVER['SERVER_PROTOCOL'] . ' 404 Not Found');
 
     $data = array(
-        'msg'       => 'Sorry, page not found!',
+        'title'     => 'Sorry, page not found!',
         'text'      => 'This a 404 error page. What are you looking for?',
         'glyphicon' => 'glyphicon-thumbs-down'
     );
@@ -52,7 +52,7 @@ $ph4->router->before('GET|POST', '/.*', function() use ( $ph4 ) {
 $ph4->router->get('/', function() use ( $ph4 ) {
 
     $data = array(
-        'msg'       => 'Hello World!',
+        'title'     => 'Hello World!',
         'text'      => 'Welcome!',
     );
     
@@ -80,7 +80,7 @@ $ph4->router->get('/readme', function() use ( $ph4 ){
     $parsedown = new Parsedown();
 
     $data = array(
-        'msg'       => 'Readme',
+        'title'     => 'Readme',
         'html'      => $parsedown->parse( file_get_contents('README.md') ),
     );
 
