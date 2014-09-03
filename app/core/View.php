@@ -35,13 +35,13 @@ class View
     {
         if ( is_array($first) )
         {
-            if ( $second ) $first = array_map_recursive( 'xssafe', $first );
+            if ( $second ) $first = array_map_recursive( 'xss_safe', $first );
             
             $this->vars = $first + $this->vars;
         }
         else
         {
-            if ( $third ) $second = xssafe( $second );
+            if ( $third ) $second = xss_safe( $second );
             
             $this->vars[$first] = $second;
         }

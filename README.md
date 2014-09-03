@@ -185,7 +185,7 @@ In view files you can simply print the variables as in php:
 <strong><?=$name?></strong>
 
 // Clean XSS and print
-<strong><?php xecho($name)?></strong>
+<strong><?php safe_echo($name)?></strong>
 ```
 
 In view files you can include other view files using standard php, e.g.:

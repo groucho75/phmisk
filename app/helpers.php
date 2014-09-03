@@ -122,17 +122,17 @@ endif;
 * @param	str
 * @return	str
 */
-if ( ! function_exists('xssafe') ) :
-function xssafe ( $data, $encoding='UTF-8' )
+if ( ! function_exists('xss_safe') ) :
+function xss_safe ( $data, $encoding='UTF-8' )
 {
 	return htmlspecialchars( $data, ENT_QUOTES | ENT_HTML401, $encoding );
 }
 endif;
 
-if ( ! function_exists('xecho') ) :
-function xecho ( $data )
+if ( ! function_exists('safe_echo') ) :
+function safe_echo ( $data )
 {
-	echo xssafe( $data );
+	echo xss_safe( $data );
 }
 endif;
 
