@@ -214,12 +214,12 @@ $ph4->router->get('/blog', function() use ( $ph4 ) {
 			->many();
 
 	$data = array(
-		'msg' 		=> 'My posts',
+		'pagetitle' => 'My posts',
 		'posts'		=> $posts,
 	);
 	
-	$ph4->tpl->assign( $data );	
-	$ph4->tpl->draw( 'blog' );    
+	$ph4->view->assign( $data, true );	
+	$ph4->view->render( 'blog' );    
 });
 ```
 Note that you have to add `use ($ph4)` to the function and then you can use it as `$ph4->db`.
@@ -227,24 +227,31 @@ The database connection parameters are set in `app/config.php` and the connectio
 
 Just for your thirst for knowledge, here is the blog template file, `ui/blog.php`:
 ```html
-{include="header"}
+<?php include __DIR__.'/header.php' ?>
 
 	<div class="container">
 	
 		<div class="page-header">
-			<h1>{$msg}</h1>
+			<h1><?=$pagetitle?></h1>
 		</div>
 		
 		<ul class="lead">
-			{loop="$posts"}
-				<li>{$value.title}</li>
-			{else}
-				<li>No post yet.</li>
-			{/loop}
+			<?php
+			if ( is_array($posts) )
+			{
+				foreach( $posts as $post )
+				{
+					echo '<li>'. $post['title'] .'</li>';
+				}
+			}
+			else
+			{
+					echo '<li>No post yet</li>';
+			} ?>
 		</ul>
 	</div>
 
-{include="footer"}
+<?php include __DIR__.'/footer.php' ?>
 ```
 
 ### Reference
