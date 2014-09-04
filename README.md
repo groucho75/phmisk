@@ -167,6 +167,10 @@ In routes you have to use 2 functions:
 // Assign a variable
 $ph4->view->assign( 'name', $name );
 
+// Assign a group of variables
+$vars = array( 'name' => 'Foo', 'surname' => 'Bar' );
+$ph4->view->assign( $vars );
+
 // Assign a variable, and clean XSS
 $ph4->view->assign( 'name', $name, true );
 
