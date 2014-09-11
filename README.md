@@ -28,10 +28,13 @@ Installation
 4. edit `app/config.php` (database connection settings, php configurations)
 5. add your routes in the main `routes.php`
 
-### Set the environment
+### Set constants
 
-In `index.php` you can set the application environment: development, testing, live (production). 
-You can use it to have application behavior depending on environment: e.g. database settings, show/hide errors. 
+In `index.php` you can edit some important constants:
+* `ENV` (default: `dev`): the application environment: development, testing, live (production). You can use it to have application behavior depending on environment: e.g. database settings, show/hide errors. 
+* `APP_PATH` (default: `app`): the path to the 'app' folder, without slashes. This folder contains all libraries and classes. For security reason you should move it outside public web root (see next paragraph).
+* `UI_PATH` (default: `ui`): the path to 'ui' folder, without slashes. This folder contains all html/css/js assets and php views. It must be public and accessible.
+
 
 ### Secure the app folder
 
