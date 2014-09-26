@@ -16,56 +16,31 @@ You can see the [Wiki](https://github.com/groucho75/phmisk/wiki) to find some tu
 
 ***
 
-Installation
-------------
+Getting started
+---------------
 
-1. download and install [Composer](https://getcomposer.org/doc/00-intro.md#installation-nix) on your machine
-2. download this repository
-3. go to phmisk directory and launch Composer install to resolve and download required packages:  
+### Prerequisites
+You need [Composer](https://getcomposer.org/doc/00-intro.md#installation-nix) installed on your machine.
+
+### Installation method #1:
+1. download and unzip this repository
+2. go to the phmisk directory and launch Composer install to resolve and download required packages:  
    ```  
    $ composer install  
    ```  
-4. edit `app/config.php` (database connection settings, php configurations)
-5. add your routes in the main `routes.php`
-
-### Set constants
-
-In `index.php` you can edit some important constants:
-* `ENV` (default: `dev`): the application environment: development, testing, live (production). You can use it to have application behavior depending on environment: e.g. database settings, show/hide errors. 
-* `APP_PATH` (default: `app`): the path to the 'app' folder, without slashes. This folder contains all libraries and classes. For security reason you should move it outside public web root (see next paragraph).
-* `UI_PATH` (default: `ui`): the path to 'ui' folder, without slashes. This folder contains all html/css/js assets and php views. It must be public and accessible.
 
 
-### Secure the app folder
+### Installation method #2 (via shell):
+1. open the terminal and go to your web server directory 
+2. launch the following command:
+   ```  
+   $ wget https://github.com/groucho75/phmisk/archive/master.tar.gz && tar -zxf master.tar.gz && rm master.tar.gz && cd phmisk-master && composer install
+   ```  
+3. you will find a new ready-to-use `phmisk-master` folder in your web server: it contains all files *including* the libraries downloaded by Composer (you don't have to launch Composer install again)
 
-For security reasons it could be a good idea move the app folder (`app`) outside/above the web root.
-
-In this sample setup the app folder has been moved *one level above* the web root:
-
-* you have to set it in `index.php`:
-
-```php
-define('APP_PATH', '../app');
-```
-
-* you have to set it in config and autoload sections in `composer.json`:
-
-```
-	"config": {
-        "vendor-dir": "../app/vendor"
-    },
-    ...
-    "autoload": {	
-        "classmap": ["../app/core/", "../app/controllers/", "../app/libraries/"],
-        "files": ["../app/helpers.php"]
-    }	
-```
-
-* then, do not forget to launch the composer install/update:
-
-```  
-$ composer update  
-```  
+### Start editing:
+* edit `app/config.php` (database connection settings, php configurations...)
+* add your routes in the main `routes.php`
 
 
 ***
@@ -73,7 +48,7 @@ $ composer update
 $ph4
 ----
 
-You can write your application editing the `routes.php`.
+**You can write your application editing the `routes.php`.**
 
 You can use a Phmisk object called `$ph4` that contains the instances of main libraries.
 In this page you can read about how to use these libraries.
@@ -338,6 +313,50 @@ The `app` folder contains some important files:
 * `bootstrap.php`: the main Phmisk class is initialised here;
 * `helpers.php`: this file contains some useful functions you can use everywhere.
 
+
+***
+
+Advanced setup
+--------------
+
+### Set constants
+
+In `index.php` you can edit some important constants:
+* `ENV` (default: `dev`): the application environment: development, testing, live (production). You can use it to have application behavior depending on environment: e.g. database settings, show/hide errors. 
+* `APP_PATH` (default: `app`): the path to the 'app' folder, without slashes. This folder contains all libraries and classes. For security reason you should move it outside public web root (see next paragraph).
+* `UI_PATH` (default: `ui`): the path to 'ui' folder, without slashes. This folder contains all html/css/js assets and php views. It must be public and accessible.
+
+
+### Secure the app folder
+
+For security reasons it could be a good idea move the app folder (`app`) outside/above the web root.
+
+In this sample setup the app folder has been moved *one level above* the web root:
+
+* you have to set it in `index.php`:
+
+```php
+define('APP_PATH', '../app');
+```
+
+* you have to set it in config and autoload sections in `composer.json`:
+
+```
+	"config": {
+        "vendor-dir": "../app/vendor"
+    },
+    ...
+    "autoload": {	
+        "classmap": ["../app/core/", "../app/controllers/", "../app/libraries/"],
+        "files": ["../app/helpers.php"]
+    }	
+```
+
+* then, do not forget to launch the composer install/update:
+
+```  
+$ composer update  
+```  
 
 ***
 Include more packages
