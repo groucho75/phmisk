@@ -25,6 +25,7 @@ You need [Composer](https://getcomposer.org/doc/00-intro.md#installation-nix) in
 ### Installation method #1:
 1. download and unzip this repository
 2. go to the phmisk directory and launch Composer install to resolve and download required packages:  
+
    ```  
    $ composer install  
    ```  
@@ -33,6 +34,7 @@ You need [Composer](https://getcomposer.org/doc/00-intro.md#installation-nix) in
 ### Installation method #2 (via shell):
 1. open the terminal and go to your web server directory 
 2. launch the following command:
+
    ```  
    $ wget https://github.com/groucho75/phmisk/archive/master.tar.gz && tar -zxf master.tar.gz && rm master.tar.gz && cd phmisk-master && composer install
    ```  
