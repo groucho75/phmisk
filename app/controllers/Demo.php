@@ -26,7 +26,7 @@ class Demo extends Base
 	function test($ph4) 
 	{
 		$data = array(
-			'msg' 		=> 'Demo->test()',
+			'title' 	=> 'Demo->test()',
 			'text'		=> 'This page has been created by Test method of Demo custom controller, located in: app/controllers/Demo.php'
 		);
 				
