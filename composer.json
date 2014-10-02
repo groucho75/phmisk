@@ -21,12 +21,14 @@
 	"config": {
         "vendor-dir": "app/vendor"
     },
-	"require": {
-		"php": ">=5.3.3",
-		"bramus/router": "dev-master",
-		"unlight/sparrow": "dev-master",
-		"erusev/parsedown": "dev-master"		
-	},
+    "require": {
+                "php": ">=5.3.3",
+                "bramus/router": "dev-master",
+                "unlight/sparrow": "dev-master"
+    },
+    "require-dev": {
+        "erusev/parsedown": "dev-master"
+    },	
     "autoload": {	
         "classmap": ["app/core/", "app/controllers/", "app/libraries/"],
         "files": ["app/helpers.php"]
