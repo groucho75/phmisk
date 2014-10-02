@@ -27,7 +27,7 @@ class Demo extends Base
 	{
 		$data = array(
 			'title' 	=> 'Demo->test()',
-			'text'		=> 'This page has been created by Test method of Demo custom controller, located in: app/controllers/Demo.php'
+			'text'		=> 'This page has been created by Test method of Demo custom controller, located in: '.APP_PATH.'/controllers/Demo.php'
 		);
 				
 		$ph4->view->assign( $data );
