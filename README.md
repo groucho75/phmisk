@@ -363,9 +363,9 @@ $ composer install
 ### Deploy to production
 
 When you are ready to deploy your phmisk site to production, follow these steps:
-* of course, copy the files on production web server;
-* in `index.php` set `ENV` to `live`;
-* run the following command on production web server (*--optimize-autoloader* flag = faster Composer autoload; *--no-dev* flag = development packages will be not installed):
+1. of course, copy all the files on production web server;
+2. in `index.php` set `ENV` to `live`;
+3. run the following command on production web server (*--optimize-autoloader* flag = faster Composer autoload; *--no-dev* flag = development packages will be not installed):
 
 ```  
 $ composer install --no-dev --optimize-autoloader
@@ -373,6 +373,7 @@ $ composer install --no-dev --optimize-autoloader
 
 **Note**: be sure to upload also the `composer.lock` file and only run Composer *install* on the production server: in this way the development packages will be skipped and you will be sure that the version of the packages installed on the production server match those you developped on. For this reason, *never* run Composer *update* on your production server.
 
+**If you cannot access the production server via shell**, you must make the steps in this order: 2, 3 (run the command on local server), 1.
 
 
 ***
