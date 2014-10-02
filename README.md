@@ -371,6 +371,9 @@ When you are ready to deploy your phmisk site to production, follow these steps:
 $ composer install --no-dev --optimize-autoloader
 ```  
 
+**Note**: be sure to upload also the `composer.lock` file and only run `composer install` on the production server: in this way the development packages will be skipped and you will be sure that the version of the packages installed on the production server match those you developped on. For this reason, *never* run `composer update` on your production server.
+
+
 
 ***
 Include more packages
