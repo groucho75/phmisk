@@ -354,10 +354,10 @@ define('APP_PATH', '../app');
     }	
 ```
 
-* then, do not forget to launch the composer install/update:
+* then, do not forget to launch the composer install:
 
 ```  
-$ composer update  
+$ composer install
 ```  
 
 ***
