@@ -360,6 +360,18 @@ define('APP_PATH', '../app');
 $ composer install
 ```  
 
+### Deploy to production
+
+When you are ready to deploy your phmisk site to production, follow these steps:
+* of course, copy the files on production web server;
+* in `index.php` set `ENV` to `live`;
+* run the following command on production web server (*--optimize-autoloader* flag = faster Composer autoload; *--no-dev* flag = development packages will be not installed):
+
+```  
+$ composer install --no-dev --optimize-autoloader
+```  
+
+
 ***
 Include more packages
 ---------------------
