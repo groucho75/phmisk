@@ -1,4 +1,4 @@
-
+<?php if ( ! defined('ENV')) exit('No direct script access allowed'); ?>
 <!-- Start FOOTER -->
 
 	<div class="container">

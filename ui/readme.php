@@ -1,3 +1,4 @@
+<?php if ( ! defined('ENV')) exit('No direct script access allowed'); ?>
 <?php include __DIR__.'/header.php' ?>
 
 	<?php // You can insert here page js/css ?>

@@ -66,7 +66,7 @@ require __DIR__ .'/'. APP_PATH . '/bootstrap.php';
 /**
  * Load the routes
  */
-require __DIR__ .'/routes.php';
+require __DIR__ .'/'. APP_PATH . '/routes.php';
 	
 
 /**

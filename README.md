@@ -101,6 +101,13 @@ class Demo extends Base
 ```
 The `Base` controller is a parent class you can extend to have shared methods.
 
+**Note**: if you have add a new controller file, you need to run a command to update Composer map autoload: 
+
+```  
+   $ composer dump-autoload
+```  
+
+
 ### Reference
 
 For usage and more examples (Dynamic Route Patterns, Mounting Routes...) please see the [router homepage: bramus/router](https://github.com/bramus/router).
