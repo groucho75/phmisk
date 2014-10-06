@@ -42,7 +42,7 @@ You need [Composer](https://getcomposer.org/doc/00-intro.md#installation-nix) in
 
 ### Start editing:
 * edit `app/config.php` (database connection settings, php configurations...)
-* add your routes in the main `routes.php`
+* add your routes in the main `app/routes.php`
 
 
 ***
@@ -50,7 +50,7 @@ You need [Composer](https://getcomposer.org/doc/00-intro.md#installation-nix) in
 $ph4
 ----
 
-**You can write your application editing the `routes.php`.**
+**You can write your application editing the `app/routes.php`.**
 
 You can use a Phmisk object called `$ph4` that contains the instances of main libraries.
 In this page you can read about how to use these libraries.
@@ -64,7 +64,7 @@ Routes
 
 ### Routing
 
-Add the simplest route in main `routes.php`:
+Add the simplest route in main `app/routes.php`:
 ```php
 $ph4->router->get('/hello', function() {
 	
@@ -76,7 +76,7 @@ And you can visit `your-site.com/hello` to see it.
 
 ### Custom controller files
 
-You can map custom controller/method as a route: put your controllers inside `app/controllers` and they will be autoloded. Then, you have to add a route statement in `routes.php`: here is a route provided by custom controller called `Demo`:
+You can map custom controller/method as a route: put your controllers inside `app/controllers` and they will be autoloded. Then, you have to add a route statement in `app/routes.php`: here is a route provided by custom controller called `Demo`:
 ```php
 $demo = new App\Controllers\Demo();
 
@@ -117,7 +117,7 @@ Template (views)
 ----------------
 Phmisk has a simple template engine to show view files. To use the template engine in a route you have to add `use ($ph4)` to the function and you can use it as `$ph4->view`.
 
-A route in `routes.php` could be:
+A route in `app/routes.php` could be:
 ```php
 $ph4->router->get('/hello/(\w+)', function($name) use ( $ph4 ) {
 	
@@ -293,6 +293,7 @@ phmisk root/
   |      |__ bootstrap.php
   |      |__ config.php
   |      |__ helpers.php  
+  |      |__ routes.php
   |
   |__ ui/
   |      |__ css/
@@ -304,7 +305,6 @@ phmisk root/
   |
   |__ composer.json
   |__ index.php
-  |__ routes.php
   |__ .htaccess  
 ```
 
@@ -321,6 +321,7 @@ The `app` folder contains some important files:
 * `config.php`: here you can set database parameters and other settings;
 * `bootstrap.php`: the main Phmisk class is initialised here;
 * `helpers.php`: this file contains some useful functions you can use everywhere.
+* `routes.php`: here you can set the application routes.
 
 
 ***
@@ -396,7 +397,7 @@ To include more php packages from [Packagist](https://packagist.org) (the main C
 	},
 ```
 
-Then, in main `routes.php` you can start using it writing:
+Then, in main `app/routes.php` you can start using it writing:
 ```php
 $log = new Monolog\Logger('name');
 ```
