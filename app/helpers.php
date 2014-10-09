@@ -236,6 +236,9 @@ endif;
  * Returns only the array items specified.  Will return a default value if
  * it is not set.
  * 
+ * @param	arr	the expected keys to be returned
+ * @param	arr	the input raw array
+ * @return	arr	only the elements from $array existing in $items
  * @link	http://ellislab.com/codeigniter/user-guide/helpers/array_helper.html
  */
  
