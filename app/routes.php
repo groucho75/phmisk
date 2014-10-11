@@ -39,9 +39,9 @@ $ph4->router->set404(function() use ($ph4) {
 /**
  * Before Router Middleware: set config vars.
  */
-$ph4->router->before('GET|POST', '/.*', function() use ( $ph4 ) {
+$ph4->router->before('GET|POST', '/.*', function() use ( $ph4, $config ) {
     
-    $ph4->view->assign( 'config', $ph4->get('config') );
+    $ph4->view->assign( 'config', $config );
     
 });
 

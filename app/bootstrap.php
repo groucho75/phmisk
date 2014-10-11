@@ -62,8 +62,6 @@ define('IS_AJAX', isset($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVE
  * and assign config and all instances to it.
  */
 $ph4 = new App\Core\Phmisk();
- 
-$ph4->set( 'config', $config );
 
 
 /**
