@@ -5,6 +5,7 @@
     "keywords": ["php", "microframework"],
     "homepage": "https://github.com/groucho75/phmisk",
     "license": "MIT",
+    "version" : "0.7",
     "authors": [
         {
             "name": "Alessandro Massasso",
