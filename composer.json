@@ -18,7 +18,7 @@
         "wiki": "https://github.com/groucho75/phmisk/wiki",
         "source": "https://github.com/groucho75/phmisk"
     },
-	"config": {
+    "config": {
         "vendor-dir": "app/vendor"
     },
     "require": {
