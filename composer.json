@@ -29,6 +29,7 @@
     "require-dev": {
         "erusev/parsedown": "dev-master"
     },	
+    "minimum-stability": "dev",
     "autoload": {	
         "classmap": ["app/core/", "app/controllers/", "app/libraries/"],
         "files": ["app/helpers.php"]
