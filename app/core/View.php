@@ -56,12 +56,17 @@ class View
      */    
     public function render( $file, $return_string = FALSE ) 
     {
-		
-		ob_start();
-		extract( $this->vars );
-		include UI_PATH.'/'.$file.'.php';
-		$html = ob_get_clean();                
-		
+        if ( ! file_exists(UI_PATH.'/'.$file.'.php') ) 
+        {
+            die( 'The view file '. UI_PATH.'/'.$file.'.php does not exist!' );
+        }
+        else
+        {
+            ob_start();
+            extract( $this->vars );
+            include UI_PATH.'/'.$file.'.php';
+            $html = ob_get_clean();                
+        }
 		if ( $return_string ) return $html; else echo $html;
     }            
 }
