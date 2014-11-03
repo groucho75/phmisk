@@ -368,26 +368,9 @@ define('APP_PATH', '../app');
 $ composer install
 ```  
 
-### Deploy to production
+### Include more packages
 
-When you are ready to deploy your phmisk site to production server, follow these steps:
-
-1. of course, copy all the files on production server;
-2. in `index.php` set `ENV` to `live`;
-3. run the following command on production server (*--optimize-autoloader* flag = faster Composer autoload; *--no-dev* flag = development packages will be not installed):
-
-```  
-$ composer install --no-dev --optimize-autoloader
-```  
-
-**Note**: be sure to upload also the `composer.lock` file and only run Composer *install* on the production server: in this way the development packages will be skipped and you will be sure that the version of the packages installed on the production server match those you developped on. For this reason, **never** run Composer *update* on your production server.
-
-If you cannot access the production server via shell, you can run the command (step 3) on local server, then upload all the files on production server.
-
-
-***
-Include more packages
----------------------
+##### Php packages
 
 To include more php packages from [Packagist](https://packagist.org) (the main Composer repository) you can simply add them in `require` section inside `composer.json` and then launch Composer update:
 ```
@@ -406,11 +389,34 @@ If you like to use other packages instead of standard (e.g. another template eng
 
 You can install libraries via Composer not only from Packagist, but e.g also from Github: here is an [example](https://github.com/groucho75/phmisk/wiki/Using-custom-Git-repository-alongside-Packagist-in-Composer).
 
+##### Javascript libraries
+
 If you need javascript libraries, of course you can get them via Composer, or you can download them and put in `ui` folder, or simply link their CDN from template files.
 
 ### Tutorials & Samples
 
 Please see the [Wiki](https://github.com/groucho75/phmisk/wiki) to find some tutorials about adding new packages.
+
+
+
+***
+Deploy to production
+--------------------
+
+
+When you are ready to deploy your phmisk site to production server, follow these steps:
+
+1. of course, copy all the files on production server;
+2. in `index.php` set `ENV` to `live`;
+3. run the following command on production server (*--optimize-autoloader* flag = faster Composer autoload; *--no-dev* flag = development packages will be not installed):
+
+```  
+$ composer install --no-dev --optimize-autoloader
+```  
+
+**Note**: be sure to upload also the `composer.lock` file and only run Composer *install* on the production server: in this way the development packages will be skipped and you will be sure that the version of the packages installed on the production server match those you developped on. For this reason, **never** run Composer *update* on your production server.
+
+If you cannot access the production server via shell, you can run the command (step 3) on local server, then upload all the files on production server.
 
 
 ***
