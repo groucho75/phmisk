@@ -36,9 +36,9 @@ You need [Composer](https://getcomposer.org/doc/00-intro.md#installation-nix) in
 2. launch the following command:
 
    ```  
-   $ wget https://github.com/groucho75/phmisk/archive/master.tar.gz && tar -zxf master.tar.gz && rm master.tar.gz && cd phmisk-master && composer install
+   $ composer create-project groucho75/phmisk -s dev
    ```  
-3. you will find a new ready-to-use `phmisk-master` folder in your web server: it contains all files *including* the libraries downloaded by Composer (you don't have to launch Composer install again)
+3. you will find the new ready-to-use `phmisk` folder in your web server: it contains all files *including* the dependencies downloaded by Composer
 
 ### Start editing:
 * edit `app/config.php` (database connection settings, php configurations...)
