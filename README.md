@@ -22,7 +22,7 @@ Getting started
 ### Prerequisites
 You need [Composer](https://getcomposer.org/doc/00-intro.md#installation-nix) installed on your machine.
 
-### Installation method #1:
+### Installation method #1 (download from Github):
 1. download and unzip this repository
 2. enter the `phmisk-master` folder and launch Composer install to resolve and download required packages:  
 
@@ -31,7 +31,7 @@ You need [Composer](https://getcomposer.org/doc/00-intro.md#installation-nix) in
    ```  
 
 
-### Installation method #2 (via shell):
+### Installation method #2 (get from Packagist):
 1. open the terminal and go to your web server directory 
 2. launch the following command:
 
