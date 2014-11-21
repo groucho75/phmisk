@@ -2,12 +2,13 @@ phmisk
 ======
 
 [Phmisk](https://github.com/groucho75/phmisk) (*/piː eɪtʃ miːsk/* or */f miːsk/* or */wɑtˈevər/* or */wɒt ðə fʌk/*) is a **Php/Html5 MIcro Starter Kit**.
-It comes with an **html5 UI**: Html5boilerplate and Twitter Bootstrap, from [Initializr](http://www.initializr.com).
 Phmisk is ready to work with:
+* html5 UI: Html5boilerplate and Twitter Bootstrap, from [Initializr](http://www.initializr.com)
 * a router: [bramus/router](https://github.com/bramus/router) (1)
 * a database layer: [Sparrow](https://github.com/mikecao/sparrow) (1)
 * a simple session manager
 * a simple template engine
+* a MVC pattern
 
 (1) *Phmisk comes out without these libraries, so you have to use Composer to install them.
 Of course, using Composer you can include and use also other libraries.*
@@ -74,7 +75,7 @@ $ph4->router->get('/hello', function() {
 ```
 And you can visit `your-site.com/hello` to see it.
 
-### Custom controller files
+### Custom controllers
 
 You can map custom controller/method as a route: put your controllers inside `app/controllers` and they will be autoloded. Then, you have to add a route statement in `app/routes.php`: here is a route provided by custom controller called `Demo`:
 ```php
@@ -245,9 +246,20 @@ Just for your thirst for knowledge, here is the blog template file, `ui/blog.php
 <?php include __DIR__.'/footer.php' ?>
 ```
 
+### Custom models
+
+You can create your model classes: put your classes inside `app/models` and they will be autoloded. The provided [database layer Sparrow](https://github.com/mikecao/sparrow) can use custom classes to work with objects.
+
+**Note**: if you have add a new model file, you need to run a command to update Composer map autoload: 
+
+```  
+   $ composer dump-autoload
+```  
+
+
 ### Reference
 
-For usage and more examples please see the [databaase layer home: Sparrow](https://github.com/mikecao/sparrow).
+For usage and more examples please see the [database layer home: Sparrow](https://github.com/mikecao/sparrow).
 
 
 ***
@@ -287,9 +299,10 @@ phmisk root/
   |__ app/
   |      |__ controllers/
   |      |__ core/    
-  |      |__ libraries/  
-  |      |__ (vendor/)    
-  |      |  
+  |      |__ libraries/
+  |      |__ models/
+  |      |__ (vendor/)
+  |      |
   |      |__ bootstrap.php
   |      |__ config.php
   |      |__ helpers.php  
@@ -311,6 +324,7 @@ phmisk root/
 The `app/controllers` folder contains all your custom controllers and a `Base` controller.
 The `app/core` folder contains some important bundled libraries (e.g. the core Phmisk class). 
 The `app/libraries` folder contains optional libraries: of course you can add here your custom classes, made by you or simply not available on remote repositories, and they will be autoloaded.
+The `app/models` folder contains all your custom model classes.
 It could be a good idea move the app folder outside/above the site foot.
 
 The `ui` contains all the Html5boilerplate and Twitter Bootstrap folder and files, generated using [Initializr](http://www.initializr.com/) and edited to work in Phmisk. Then, there are some php view files: header, home, footer...
@@ -357,7 +371,7 @@ define('APP_PATH', '../app');
     },
     ...
     "autoload": {	
-        "classmap": ["../app/core/", "../app/controllers/", "../app/libraries/"],
+        "classmap": ["../app/core/", "../app/controllers/", "../app/libraries/", "../app/models/"],
         "files": ["../app/helpers.php"]
     }	
 ```
