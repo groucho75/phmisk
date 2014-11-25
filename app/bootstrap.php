@@ -19,6 +19,12 @@ require __DIR__ . '/config.php';
 
 
 /**
+ * Set the Views path (if not already defined usually it's UI_PATH) 
+ */
+if ( ! defined('VIEWS_PATH') ) define('VIEWS_PATH', UI_PATH );
+
+
+/**
  * Set error reporting level
  */
 if ( ENV == 'live' )

@@ -144,7 +144,7 @@ The template file, `ui/hello.php`, could be:
 ```
 You can visit `your-site.com/hello/johnny` to see it.
 
-Note that template files are php files, so you can freely use php statements.
+Note that template files are php files, so you can freely use php statements. The php template files usually are into the public `ui` folder, together with the assets (js, css, images): you can move template files in another folder (e.g. `app/views`) setting an optional `VIEWS_PATH` constant in `index.php`.
 
 
 ### Reference
@@ -349,6 +349,7 @@ In `index.php` you can edit some important constants:
 * `ENV` (default: `dev`): the application environment: development, testing, live (production). You can use it to have application behavior depending on environment: e.g. database settings, show/hide errors. 
 * `APP_PATH` (default: `app`): the path to the 'app' folder, without slashes. This folder contains all libraries and classes. For security reason you should move it outside public web root (see next paragraph).
 * `UI_PATH` (default: `ui`): the path to 'ui' folder, without slashes. This folder contains all html/css/js assets and php views. It must be public and accessible.
+* `VIEWS_PATH` (default: `ui`): the path to folder of php template files (the views), without slashes. This folder contains all php views. In a standard setup it is defined later on bootstrap and coincides with `UI_PATH`, otherwise you can define it in `index.php`: e.g. to move it outside public web root, such as `app/views`.
 
 
 ### Secure the app folder
