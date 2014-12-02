@@ -346,10 +346,10 @@ Advanced setup
 ### Set constants
 
 In `index.php` you can edit some important constants:
-* `ENV` (default: `dev`): the application environment: development, testing, live (production). You can use it to have application behavior depending on environment: e.g. database settings, show/hide errors. 
-* `APP_PATH` (default: `app`): the path to the 'app' folder, without slashes. This folder contains all libraries and classes. For security reason you should move it outside public web root (see next paragraph).
-* `UI_PATH` (default: `ui`): the path to 'ui' folder, without slashes. This folder contains all html/css/js assets and php views. It must be public and accessible.
-* `VIEWS_PATH` (default: `ui`): the path to folder of php template files (the views), without slashes. This folder contains all php views. In a standard setup it is defined later on bootstrap and coincides with `UI_PATH`, otherwise you can define it in `index.php`: e.g. to move it outside public web root, such as `app/views`.
+* `ENV` (default: `'dev'`): the application environment: dev (development), test, live (production). You can use it to have application behavior depending on environment: e.g. database settings, show/hide errors. 
+* `APP_PATH` (default: `'app'`): the path to the 'app' folder, without slashes. This folder contains all libraries and classes. For security reason you should move it outside public web root (see next paragraph).
+* `UI_PATH` (default: `'ui'`): the path to 'ui' folder, without slashes. This folder contains all html/css/js assets and php views. It must be public and accessible.
+* `VIEWS_PATH` (default: as `UI_PATH`): the path to folder of php template files (the views), without slashes. This folder contains all php views. In a standard setup you don't have to define it because it is defined later on bootstrap and coincides with `UI_PATH`, otherwise you can define it in `index.php`: e.g. to move it outside public web root, such as `APP_PATH.'/views'`.
 
 
 ### Secure the app folder
