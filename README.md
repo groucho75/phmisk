@@ -33,13 +33,13 @@ You need [Composer](https://getcomposer.org/doc/00-intro.md#installation-nix) in
 
 
 ### Installation method #2 (Packagist):
-1. open the terminal and go to your web server directory 
+1. open the terminal and go to your web server 
 2. launch the following command:
 
    ```  
-   $ composer create-project groucho75/phmisk -s dev
+   $ composer create-project groucho75/phmisk my_project -s dev
    ```  
-3. you will find the new ready-to-use `phmisk` folder in your web server: it contains all files *including* the dependencies downloaded by Composer
+3. you will find the new ready-to-use `my_project` folder in your web server: it contains all files *including* the dependencies downloaded by Composer
 
 ### Start editing:
 * edit `app/config.php` (database connection settings, php configurations...)
