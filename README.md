@@ -297,9 +297,9 @@ The file structure
 phmisk root/
   |
   |__ app/
+  |      |__ classes/  
   |      |__ controllers/
   |      |__ core/    
-  |      |__ libraries/
   |      |__ models/
   |      |__ (vendor/)
   |      |
@@ -323,7 +323,7 @@ phmisk root/
 
 The `app/controllers` folder contains all your custom controllers and a `Base` controller.
 The `app/core` folder contains some important bundled libraries (e.g. the core Phmisk class). 
-The `app/libraries` folder contains optional libraries: of course you can add here your custom classes, made by you or simply not available on remote repositories, and they will be autoloaded.
+The `app/classes` folder contains optional classes: of course you can add here your custom classes, made by you or simply not available on remote repositories, and they will be autoloaded.
 The `app/models` folder contains all your custom model classes.
 It could be a good idea move the app folder outside/above the site foot.
 
@@ -372,7 +372,7 @@ define('APP_PATH', '../app');
     },
     ...
     "autoload": {	
-        "classmap": ["../app/core/", "../app/controllers/", "../app/libraries/", "../app/models/"],
+        "classmap": ["../app/core/", "../app/controllers/", "../app/classes/", "../app/models/"],
         "files": ["../app/helpers.php"]
     }	
 ```
