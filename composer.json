@@ -30,7 +30,7 @@
         "erusev/parsedown": "dev-master"
     },	
     "autoload": {	
-        "classmap": ["app/core/", "app/controllers/", "app/libraries/", "app/models/"],
+        "classmap": ["app/core/", "app/controllers/", "app/classes/", "app/models/"],
         "files": ["app/helpers.php"]
     }	
 }
