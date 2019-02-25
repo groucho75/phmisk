@@ -23,7 +23,7 @@
     },
     "require": {
         "php": ">=5.3.3",
-        "bramus/router": "dev-master",
+        "bramus/router": "~1.4",
         "unlight/sparrow": "dev-master"
     },
     "require-dev": {
